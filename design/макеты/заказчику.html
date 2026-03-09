@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заказчику — РСК ГРУПП</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #09090b; color: #ffffff; }
+    .glass-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); transition: all 0.3s ease; }
+    .glass-card:hover { border-color: rgba(245,158,11,0.3); box-shadow: 0 0 40px rgba(245,158,11,0.06); transform: translateY(-3px); }
+    .gradient-text { background: linear-gradient(135deg, #ffffff 0%, #fde68a 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .amber-btn { background: #f59e0b; color: #0a0a0a; font-weight: 600; transition: all 0.25s; }
+    .amber-btn:hover { background: #fbbf24; box-shadow: 0 0 30px rgba(245,158,11,0.3); }
+    .outline-btn { border: 1px solid rgba(255,255,255,0.18); color: white; transition: all 0.25s; }
+    .outline-btn:hover { border-color: #f59e0b; color: #f59e0b; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #f59e0b; }
+    .nav-link { color: #a1a1aa; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover { color: #ffffff; }
+    .benefit-num { font-size: 3.5rem; font-weight: 900; line-height: 1; background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(245,158,11,0.05)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: absolute; top: 20px; right: 24px; }
+    .step-connector { position: absolute; top: 24px; left: calc(100% + 1px); width: calc(100% - 2px); height: 1px; background: linear-gradient(to right, rgba(245,158,11,0.4), rgba(245,158,11,0.1)); }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header style="background: rgba(9,9,11,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); position: fixed; top:0; left:0; right:0; z-index:50;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8" style="height: 76px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="главная.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-black" style="background: linear-gradient(135deg, #f59e0b, #d97706);">РСК</div>
+        <span class="font-bold text-white text-lg tracking-tight">РСК ГРУПП</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="о_компании.html" class="nav-link">О компании</a>
+        <a href="заказчику.html" class="nav-link" style="color:white;">Заказчику</a>
+        <a href="каталог.html" class="nav-link">Продукция</a>
+        <a href="наши_объекты.html" class="nav-link">Наши объекты</a>
+        <a href="контакты.html" class="nav-link">Контакты</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="tel:+79600796853" class="hidden md:block text-zinc-400 hover:text-white text-sm transition-colors">+7 960 079-68-53</a>
+        <a href="контакты.html" class="px-4 py-2 rounded-lg text-sm amber-btn">Заказать звонок</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section style="padding-top: 76px; position: relative; overflow: hidden; min-height: 65vh; display:flex; align-items:center;">
+    <div style="position:absolute;inset:0;">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.25;" alt="">
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(9,9,11,0.4) 0%,rgba(9,9,11,1) 100%);"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%, rgba(245,158,11,0.06) 0%, transparent 60%);"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 w-full">
+      <nav style="display:flex;gap:8px;align-items:center;margin-bottom:20px;font-size:0.8rem;color:#52525b;">
+        <a href="главная.html" class="hover:text-amber-400 transition-colors">Главная</a>
+        <span>›</span>
+        <span style="color:#a1a1aa;">Заказчику</span>
+      </nav>
+      <div class="section-label mb-4">Для заказчиков</div>
+      <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; max-width: 650px; margin-bottom: 20px;">
+        Всё, что нужно<br>
+        <span class="gradient-text">для вашего проекта</span>
+      </h1>
+      <p style="color: #a1a1aa; font-size: 1.1rem; line-height: 1.7; max-width: 520px; margin-bottom: 32px;">
+        От первой консультации до подписания акта выполненных работ — 
+        сопровождаем каждый проект. Производство, поставка, документация.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="контакты.html" class="px-7 py-3.5 rounded-xl text-base amber-btn">Получить КП</a>
+        <a href="каталог.html" class="px-7 py-3.5 rounded-xl text-base outline-btn">Каталог продукции</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ключевые преимущества (Big Cards) -->
+  <section style="background: #0d0d0f; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div class="text-center mb-14">
+        <div class="section-label mb-3">Почему мы</div>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800;">Преимущества РСК ГРУПП</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Card 1 -->
+        <div class="glass-card rounded-2xl p-8 relative overflow-hidden" style="min-height:220px;">
+          <div class="benefit-num">01</div>
+          <div style="width:48px;height:48px;border-radius:12px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 style="font-weight:800;font-size:1.3rem;margin-bottom:10px;">5 лет гарантии</h3>
+          <p style="color:#71717a;font-size:0.9rem;line-height:1.6;max-width:360px;">Официальная расширенная гарантия на всё осветительное оборудование. Документально оформленные обязательства производителя.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="glass-card rounded-2xl p-8 relative overflow-hidden" style="min-height:220px;">
+          <div class="benefit-num">02</div>
+          <div style="width:48px;height:48px;border-radius:12px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 style="font-weight:800;font-size:1.3rem;margin-bottom:10px;">Производство от 21 дня</h3>
+          <p style="color:#71717a;font-size:0.9rem;line-height:1.6;max-width:360px;">Контролируемые сроки изготовления. Собственный завод без зависимости от сторонних производств и посредников.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="glass-card rounded-2xl p-8 relative overflow-hidden" style="min-height:220px;">
+          <div class="benefit-num">03</div>
+          <div style="width:48px;height:48px;border-radius:12px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3 style="font-weight:800;font-size:1.3rem;margin-bottom:10px;">Полный пакет документов</h3>
+          <p style="color:#71717a;font-size:0.9rem;line-height:1.6;max-width:360px;">Паспорта, сертификаты, технические условия, протоколы испытаний. Вся документация для приёмки объектов.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="glass-card rounded-2xl p-8 relative overflow-hidden" style="min-height:220px;">
+          <div class="benefit-num">04</div>
+          <div style="width:48px;height:48px;border-radius:12px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 style="font-weight:800;font-size:1.3rem;margin-bottom:10px;">Персональный менеджер</h3>
+          <p style="color:#71717a;font-size:0.9rem;line-height:1.6;max-width:360px;">Один контакт для всех вопросов по проекту: от заявки до постгарантийного обслуживания.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-шаговый процесс (Timeline) -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+    <div class="text-center mb-14">
+      <div class="section-label mb-3">Процесс работы</div>
+      <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800;">Как мы работаем</h2>
+      <p style="color:#71717a;font-size:1rem;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;">От первого звонка до ввода объекта в эксплуатацию — чёткий процесс без сюрпризов</p>
+    </div>
+
+    <!-- Desktop horizontal timeline -->
+    <div class="hidden lg:grid grid-cols-4 gap-0 relative mb-12">
+      <!-- Connecting line -->
+      <div style="position:absolute;top:24px;left:calc(12.5% + 12px);right:calc(12.5% + 12px);height:1px;background:linear-gradient(to right, #f59e0b, rgba(245,158,11,0.3), rgba(245,158,11,0.1));z-index:0;"></div>
+
+      <!-- Step 1 -->
+      <div style="text-align:center;position:relative;z-index:1;padding:0 20px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(245,158,11,0.15);border:2px solid #f59e0b;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-weight:800;color:#f59e0b;font-size:1rem;">01</div>
+        <h4 style="font-weight:700;font-size:1rem;margin-bottom:10px;">Заявка</h4>
+        <p style="color:#71717a;font-size:0.8125rem;line-height:1.6;">Оставляете заявку или звоните. Бесплатная консультация в течение 2 часов.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="text-align:center;position:relative;z-index:1;padding:0 20px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.5);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-weight:800;color:#f59e0b;font-size:1rem;">02</div>
+        <h4 style="font-weight:700;font-size:1rem;margin-bottom:10px;">КП и расчёт</h4>
+        <p style="color:#71717a;font-size:0.8125rem;line-height:1.6;">Подбираем оборудование, делаем расчёт освещения, готовим коммерческое предложение.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="text-align:center;position:relative;z-index:1;padding:0 20px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-weight:800;color:#f59e0b;font-size:1rem;">03</div>
+        <h4 style="font-weight:700;font-size:1rem;margin-bottom:10px;">Производство</h4>
+        <p style="color:#71717a;font-size:0.8125rem;line-height:1.6;">Запускаем в производство. Вы отслеживаете статус заказа. Срок от 21 рабочего дня.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div style="text-align:center;position:relative;z-index:1;padding:0 20px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-weight:800;color:#f59e0b;font-size:1rem;">04</div>
+        <h4 style="font-weight:700;font-size:1rem;margin-bottom:10px;">Поставка</h4>
+        <p style="color:#71717a;font-size:0.8125rem;line-height:1.6;">Отгрузка с полным пакетом документов. Поддержка при монтаже и сдаче объекта.</p>
+      </div>
+    </div>
+
+    <!-- Mobile vertical timeline -->
+    <div class="lg:hidden flex flex-col gap-6">
+      <div style="display:flex;gap:16px;">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(245,158,11,0.15);border:2px solid #f59e0b;display:flex;align-items:center;justify-content:center;font-weight:800;color:#f59e0b;font-size:0.875rem;flex-shrink:0;">01</div>
+          <div style="width:1px;flex:1;background:linear-gradient(to bottom,rgba(245,158,11,0.4),transparent);margin-top:8px;"></div>
+        </div>
+        <div style="padding-top:8px;padding-bottom:24px;">
+          <h4 style="font-weight:700;margin-bottom:8px;">Заявка</h4>
+          <p style="color:#71717a;font-size:0.875rem;line-height:1.6;">Оставляете заявку или звоните. Бесплатная консультация в течение 2 часов.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.5);display:flex;align-items:center;justify-content:center;font-weight:800;color:#f59e0b;font-size:0.875rem;flex-shrink:0;">02</div>
+          <div style="width:1px;flex:1;background:linear-gradient(to bottom,rgba(245,158,11,0.3),transparent);margin-top:8px;"></div>
+        </div>
+        <div style="padding-top:8px;padding-bottom:24px;">
+          <h4 style="font-weight:700;margin-bottom:8px;">КП и расчёт</h4>
+          <p style="color:#71717a;font-size:0.875rem;line-height:1.6;">Подбираем оборудование, делаем расчёт освещения, готовим коммерческое предложение.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.4);display:flex;align-items:center;justify-content:center;font-weight:800;color:#f59e0b;font-size:0.875rem;flex-shrink:0;">03</div>
+          <div style="width:1px;flex:1;background:linear-gradient(to bottom,rgba(245,158,11,0.2),transparent);margin-top:8px;"></div>
+        </div>
+        <div style="padding-top:8px;padding-bottom:24px;">
+          <h4 style="font-weight:700;margin-bottom:8px;">Производство</h4>
+          <p style="color:#71717a;font-size:0.875rem;line-height:1.6;">Запускаем в производство. Срок от 21 рабочего дня.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#f59e0b;font-size:0.875rem;flex-shrink:0;">04</div>
+        </div>
+        <div style="padding-top:8px;">
+          <h4 style="font-weight:700;margin-bottom:8px;">Поставка</h4>
+          <p style="color:#71717a;font-size:0.875rem;line-height:1.6;">Отгрузка с полным пакетом документов.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Технологии -->
+  <section style="background: #0d0d0f; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="section-label mb-4">Технологии</div>
+          <h2 style="font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">
+            Передовые технологии<br>
+            <span class="gradient-text">в каждом светильнике</span>
+          </h2>
+          <p style="color:#a1a1aa;font-size:1rem;line-height:1.7;margin-bottom:30px;">
+            Применяем лучшие мировые светодиодные чипы, собственные 
+            разработки оптических систем и интеллектуальные драйверы питания.
+          </p>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.07);">
+              <div>
+                <div style="font-weight:600;font-size:0.9375rem;margin-bottom:4px;">Световая эффективность</div>
+                <div style="color:#52525b;font-size:0.8125rem;">Светодиодные чипы с КПД до 95%</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.4rem;font-weight:800;color:#f59e0b;">160</div>
+                <div style="font-size:0.7rem;color:#52525b;text-transform:uppercase;letter-spacing:0.1em;">лм/Вт</div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.07);">
+              <div>
+                <div style="font-weight:600;font-size:0.9375rem;margin-bottom:4px;">Защита корпуса</div>
+                <div style="color:#52525b;font-size:0.8125rem;">Наружные модели: пыль, влага, вандализм</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.4rem;font-weight:800;color:#f59e0b;">IP65+</div>
+                <div style="font-size:0.7rem;color:#52525b;text-transform:uppercase;letter-spacing:0.1em;">IK10</div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.07);">
+              <div>
+                <div style="font-weight:600;font-size:0.9375rem;margin-bottom:4px;">Ресурс работы</div>
+                <div style="color:#52525b;font-size:0.8125rem;">Гарантированный срок без замены</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.4rem;font-weight:800;color:#f59e0b;">50 000</div>
+                <div style="font-size:0.7rem;color:#52525b;text-transform:uppercase;letter-spacing:0.1em;">часов</div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.07);">
+              <div>
+                <div style="font-weight:600;font-size:0.9375rem;margin-bottom:4px;">Диапазон температур</div>
+                <div style="color:#52525b;font-size:0.8125rem;">Работа в суровых климатических условиях</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.4rem;font-weight:800;color:#f59e0b;">−60°C</div>
+                <div style="font-size:0.7rem;color:#52525b;text-transform:uppercase;letter-spacing:0.1em;">до +50°C</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius:20px;overflow:hidden;aspect-ratio:1;position:relative;">
+          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format&fit=crop&q=80" style="width:100%;height:100%;object-fit:cover;opacity:0.65;" alt="">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,9,11,0.6) 0%,transparent 60%);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+    <div style="border-radius:24px;padding:64px;position:relative;overflow:hidden;text-align:center;background:linear-gradient(135deg,#1c1510,#111113);border:1px solid rgba(245,158,11,0.15);">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(245,158,11,0.07) 0%, transparent 60%);"></div>
+      <div class="relative">
+        <div class="section-label mb-4" style="display:block;">Начнём работу</div>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;margin-bottom:16px;">Готовы к сотрудничеству?</h2>
+        <p style="color:#a1a1aa;font-size:1rem;max-width:480px;margin:0 auto 32px;line-height:1.6;">
+          Оставьте заявку — рассчитаем стоимость и сроки изготовления под ваш проект
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="контакты.html" class="px-8 py-4 rounded-xl font-semibold text-base amber-btn">Оставить заявку</a>
+          <a href="каталог.html" class="px-8 py-4 rounded-xl font-semibold text-base outline-btn">Смотреть каталог</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: #09090b; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-black" style="background: linear-gradient(135deg, #f59e0b, #d97706);">РСК</div>
+            <span class="font-bold text-white text-lg">РСК ГРУПП</span>
+          </div>
+          <p style="color:#52525b;font-size:0.875rem;line-height:1.6;margin-bottom:18px;">Производитель LED-оборудования. Казань, с 2016 года.</p>
+          <div class="flex gap-3">
+            <a href="#" style="width:34px;height:34px;border-radius:8px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-size:0.75rem;font-weight:700;" class="hover:bg-amber-500 hover:text-black transition-all">ВК</a>
+            <a href="#" style="width:34px;height:34px;border-radius:8px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-size:0.75rem;font-weight:700;" class="hover:bg-amber-500 hover:text-black transition-all">TG</a>
+            <a href="#" style="width:34px;height:34px;border-radius:8px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-size:0.75rem;font-weight:700;" class="hover:bg-amber-500 hover:text-black transition-all">YT</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Продукция</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="каталог.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Наружное освещение</a></li>
+            <li><a href="каталог.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Внутреннее освещение</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Компания</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="о_компании.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">О нас</a></li>
+            <li><a href="заказчику.html" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Заказчику</a></li>
+            <li><a href="наши_объекты.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Наши объекты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Контакты</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li style="color:#52525b;font-size:0.875rem;">Казань, Теплично-Комбинатская, 5В</li>
+            <li><a href="tel:+79600796853" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">+7 960 079-68-53</a></li>
+            <li><a href="mailto:mail@rsc-groupp.ru" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">mail@rsc-groupp.ru</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.05);">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
+        <p style="color:#3f3f46;font-size:0.75rem;">© 2026 ООО «РСК ГРУПП» · ИНН 1657223686</p>
+        <a href="#" style="color:#3f3f46;font-size:0.75rem;" class="hover:text-zinc-400 transition-colors">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+{
+  "project_name": "рск_групп_сайт",
+  "client": "ООО РСК ГРУПП",
+  "type": "website_development",
+  "status": "in_development",
+  "created": "2026-03-07",
+  "current_site": "https://рскгрупп.рф",
+  "domain": "рскгрупп.рф",
+  "tech_stack": {
+    "framework": "Next.js 14+ (App Router)",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS",
+    "3d": "React Three Fiber + Three.js",
+    "3d_format": "GLB/GLTF",
+    "cms": "Admin-панель для каталога (~200 позиций)",
+    "hosting": "Vercel",
+    "backend": "Требуется (регистрация, авторизация, admin, чат)",
+    "analytics": "Яндекс.Метрика"
+  },
+  "company": {
+    "inn": "1657223686",
+    "kpp": "168301001",
+    "ogrn": "1161690093608",
+    "address": "420036, Республика Татарстан, г. Казань, Теплично-Комбинатская ул., д. 5В",
+    "phone": "+7 960 079-68-53",
+    "email": "mail@rsc-groupp.ru",
+    "work_hours": "Пн-Пт 8:00-17:00"
+  },
+  "product_categories": [
+    "naruzhnoe-osveshhenie",
+    "vnutrennee-osveshhenie"
+  ],
+  "excluded_sections": ["maf", "МАФ", "малые архитектурные формы"],
+  "features": {
+    "static_pages": true,
+    "product_catalog": true,
+    "3d_models": true,
+    "ai_seo": true,
+    "designer_registration": true,
+    "telegram_chat": true,
+    "yandex_metrika": true
+  },
+  "open_questions": [
+    "Формат BIM: основной Revit .rfa, уточнить полный список",
+    "IES-файлы: полнота покрытия каталога (~200 позиций)",
+    "Параметры фильтрации: конкретный набор (мощность, IP, область применения)",
+    "CTA на странице ЗАКАЗЧИКУ: конкретные призывы к действию",
+    "Переписывание контента: приоритеты и сроки",
+    "Фотосъёмка продукции: объём, формат, сроки"
+  ],
+  "team": {
+    "project_manager": null,
+    "designer": null,
+    "developer": null
+  }
+}

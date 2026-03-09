@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — РСК ГРУПП</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #09090b; color: #ffffff; }
+    .gradient-text { background: linear-gradient(135deg, #ffffff 0%, #fde68a 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .amber-btn { background: #f59e0b; color: #0a0a0a; font-weight: 600; transition: all 0.25s; }
+    .amber-btn:hover { background: #fbbf24; box-shadow: 0 0 30px rgba(245,158,11,0.3); }
+    .outline-btn { border: 1px solid rgba(255,255,255,0.18); color: white; transition: all 0.25s; }
+    .outline-btn:hover { border-color: #f59e0b; color: #f59e0b; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #f59e0b; }
+    .nav-link { color: #a1a1aa; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover { color: #ffffff; }
+
+    /* Form styles */
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 0.8125rem; font-weight: 500; color: #a1a1aa; }
+    .form-input { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 16px; color: white; font-size: 0.9375rem; font-family: 'Inter', sans-serif; outline: none; transition: border-color 0.2s; width: 100%; }
+    .form-input:focus { border-color: rgba(245,158,11,0.5); background: rgba(255,255,255,0.05); }
+    .form-input::placeholder { color: #52525b; }
+    textarea.form-input { resize: vertical; min-height: 130px; }
+
+    /* Contact info cards */
+    .contact-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 20px; display: flex; align-items: flex-start; gap: 14px; transition: all 0.2s; }
+    .contact-card:hover { border-color: rgba(245,158,11,0.25); background: rgba(245,158,11,0.02); }
+    .contact-icon { width: 44px; height: 44px; border-radius: 11px; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+    /* Map placeholder */
+    .map-placeholder { border-radius: 16px; overflow: hidden; background: #111113; border: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+    /* Social buttons */
+    .social-btn { display: flex; align-items: center; gap: 10px; padding: 14px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; text-decoration: none; transition: all 0.2s; }
+    .social-btn:hover { border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.04); }
+    .social-btn:hover .social-name { color: #f59e0b; }
+
+    /* Success message */
+    .success-msg { display: none; background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); border-radius: 12px; padding: 16px 20px; color: #4ade80; font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header style="background: rgba(9,9,11,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); position: fixed; top:0; left:0; right:0; z-index:50;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8" style="height: 76px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="главная.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-black" style="background: linear-gradient(135deg, #f59e0b, #d97706);">РСК</div>
+        <span class="font-bold text-white text-lg tracking-tight">РСК ГРУПП</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="о_компании.html" class="nav-link">О компании</a>
+        <a href="заказчику.html" class="nav-link">Заказчику</a>
+        <a href="каталог.html" class="nav-link">Продукция</a>
+        <a href="наши_объекты.html" class="nav-link">Наши объекты</a>
+        <a href="контакты.html" class="nav-link" style="color:white;">Контакты</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="tel:+79600796853" class="hidden md:block text-zinc-400 hover:text-white text-sm transition-colors">+7 960 079-68-53</a>
+        <a href="#form" class="px-4 py-2 rounded-lg text-sm amber-btn">Заказать звонок</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section style="padding-top: 76px;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <nav style="display:flex;gap:8px;align-items:center;margin-bottom:20px;font-size:0.8rem;color:#52525b;">
+        <a href="главная.html" class="hover:text-amber-400 transition-colors">Главная</a>
+        <span>›</span>
+        <span style="color:#a1a1aa;">Контакты</span>
+      </nav>
+      <div class="section-label mb-4">Свяжитесь с нами</div>
+      <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 14px;">
+        <span class="gradient-text">Контакты</span>
+      </h1>
+      <p style="color:#a1a1aa;font-size:1.05rem;max-width:480px;line-height:1.7;">
+        Готовы обсудить ваш проект или ответить на любые вопросы. 
+        Свяжитесь удобным для вас способом.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main content: Form + Info -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+      <!-- Form (3 cols) -->
+      <div class="lg:col-span-3" id="form">
+        <div style="background:#111113;border-radius:20px;padding:40px;border:1px solid rgba(255,255,255,0.07);">
+          <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:6px;">Написать нам</h2>
+          <p style="color:#71717a;font-size:0.875rem;margin-bottom:32px;">Ответим в течение 2 часов в рабочее время</p>
+
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+              <div class="form-group">
+                <label class="form-label">Имя <span style="color:#f87171;">*</span></label>
+                <input type="text" class="form-input" placeholder="Иван Иванов" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Компания</label>
+                <input type="text" class="form-input" placeholder="ООО «Компания»">
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+              <div class="form-group">
+                <label class="form-label">Телефон <span style="color:#f87171;">*</span></label>
+                <input type="tel" class="form-input" placeholder="+7 (xxx) xxx-xx-xx" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-input" placeholder="ivan@company.ru">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:16px;">
+              <label class="form-label">Тема обращения</label>
+              <select class="form-input" style="appearance:none;cursor:pointer;">
+                <option value="" style="background:#111113;">Выберите тему</option>
+                <option value="kp" style="background:#111113;">Запрос коммерческого предложения</option>
+                <option value="catalog" style="background:#111113;">Информация о продукции</option>
+                <option value="project" style="background:#111113;">Обсуждение проекта</option>
+                <option value="warranty" style="background:#111113;">Гарантийное обслуживание</option>
+                <option value="other" style="background:#111113;">Другое</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom:24px;">
+              <label class="form-label">Сообщение <span style="color:#f87171;">*</span></label>
+              <textarea class="form-input" placeholder="Опишите ваш запрос, объект, требования к освещению..." required></textarea>
+            </div>
+
+            <!-- File upload -->
+            <div style="border:1px dashed rgba(255,255,255,0.12);border-radius:10px;padding:16px;text-align:center;cursor:pointer;margin-bottom:24px;transition:border-color 0.2s;" class="hover:border-amber-500/30">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#52525b" stroke-width="2" style="margin:0 auto 8px;"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <div style="color:#52525b;font-size:0.8125rem;">Прикрепить ТЗ, чертежи или план (необязательно)</div>
+              <div style="color:#3f3f46;font-size:0.7rem;margin-top:4px;">PDF, DWG, DOC до 20 MB</div>
+            </div>
+
+            <!-- Privacy -->
+            <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:24px;">
+              <input type="checkbox" id="privacy" required style="margin-top:3px;accent-color:#f59e0b;width:16px;height:16px;flex-shrink:0;">
+              <label for="privacy" style="color:#52525b;font-size:0.8rem;line-height:1.5;cursor:pointer;">Я согласен с <a href="#" style="color:#a1a1aa;" class="hover:text-amber-400 transition-colors">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
+            </div>
+
+            <div class="success-msg" id="successMsg">
+              Ваше сообщение отправлено! Мы свяжемся с вами в течение 2 часов.
+            </div>
+
+            <button type="submit" class="amber-btn px-8 py-4 rounded-xl text-base w-full" style="border:none;cursor:pointer;font-size:1rem;">
+              Отправить сообщение
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact info (2 cols) -->
+      <div class="lg:col-span-2">
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+          <!-- Address -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:600;font-size:0.9375rem;margin-bottom:4px;">Адрес завода</div>
+              <div style="color:#71717a;font-size:0.8125rem;line-height:1.5;">420036, Казань,<br>Теплично-Комбинатская ул., д. 5В</div>
+              <a href="#map" style="color:#f59e0b;font-size:0.75rem;margin-top:6px;display:inline-block;" class="hover:text-amber-300">Показать на карте →</a>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <a href="tel:+79600796853" class="contact-card" style="text-decoration:none;">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.44-.44a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:600;font-size:0.9375rem;margin-bottom:2px;">Телефон</div>
+              <div style="color:#f59e0b;font-size:1.1rem;font-weight:700;">+7 960 079-68-53</div>
+              <div style="color:#71717a;font-size:0.75rem;margin-top:2px;">Пн–Пт: 9:00 – 18:00 (МСК)</div>
+            </div>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:mail@rsc-groupp.ru" class="contact-card" style="text-decoration:none;">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:600;font-size:0.9375rem;margin-bottom:2px;">E-mail</div>
+              <div style="color:#f59e0b;font-size:0.9375rem;font-weight:600;">mail@rsc-groupp.ru</div>
+              <div style="color:#71717a;font-size:0.75rem;margin-top:2px;">Ответим в течение 2 часов</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Social links -->
+        <div style="margin-bottom:28px;">
+          <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#52525b;margin-bottom:12px;">Мы в соцсетях</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <a href="#" class="social-btn">
+              <div style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:white;">ВК</div>
+              <div>
+                <div class="social-name" style="font-weight:600;font-size:0.875rem;color:#a1a1aa;transition:color 0.2s;">ВКонтакте</div>
+                <div style="color:#52525b;font-size:0.75rem;">vk.com/rscgroupp</div>
+              </div>
+            </a>
+            <a href="#" class="social-btn">
+              <div style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:white;">TG</div>
+              <div>
+                <div class="social-name" style="font-weight:600;font-size:0.875rem;color:#a1a1aa;transition:color 0.2s;">Telegram</div>
+                <div style="color:#52525b;font-size:0.75rem;">t.me/rscgroupp</div>
+              </div>
+            </a>
+            <a href="#" class="social-btn">
+              <div style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:white;">YT</div>
+              <div>
+                <div class="social-name" style="font-weight:600;font-size:0.875rem;color:#a1a1aa;transition:color 0.2s;">YouTube</div>
+                <div style="color:#52525b;font-size:0.75rem;">youtube.com/@rscgroupp</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Working hours -->
+        <div style="background:#111113;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px;">
+          <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#52525b;margin-bottom:12px;">Режим работы</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:#a1a1aa;font-size:0.875rem;">Понедельник – пятница</span>
+              <span style="font-weight:600;font-size:0.875rem;">9:00 – 18:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:#71717a;font-size:0.875rem;">Суббота</span>
+              <span style="color:#71717a;font-size:0.875rem;">10:00 – 15:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:#71717a;font-size:0.875rem;">Воскресенье</span>
+              <span style="color:#71717a;font-size:0.875rem;">Выходной</span>
+            </div>
+          </div>
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:8px;">
+            <div style="width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px rgba(74,222,128,0.5);"></div>
+            <span style="color:#4ade80;font-size:0.8125rem;font-weight:500;">Сейчас работаем</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map section -->
+  <section id="map" style="background:#0d0d0f;border-top:1px solid rgba(255,255,255,0.05);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div class="section-label mb-4">Расположение</div>
+      <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:24px;">Как нас найти</h2>
+
+      <!-- Map placeholder -->
+      <div class="map-placeholder" style="height:380px;position:relative;">
+        <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=1920&auto=format&fit=crop&q=60" style="width:100%;height:100%;object-fit:cover;opacity:0.25;position:absolute;inset:0;" alt="">
+        <div style="position:absolute;inset:0;background:rgba(9,9,11,0.5);"></div>
+        <div style="position:relative;z-index:1;text-align:center;padding:24px;">
+          <div style="width:52px;height:52px;border-radius:50%;background:rgba(245,158,11,0.15);border:2px solid #f59e0b;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 style="font-weight:700;font-size:1.1rem;margin-bottom:8px;">РСК ГРУПП</h3>
+          <p style="color:#a1a1aa;font-size:0.875rem;margin-bottom:20px;">420036, Казань, Теплично-Комбинатская ул., д. 5В</p>
+          <a href="https://yandex.ru/maps/?text=Казань+Теплично-Комбинатская+5В" target="_blank" class="px-6 py-3 rounded-xl text-sm amber-btn inline-block">
+            Открыть в Яндекс Картах →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Реквизиты -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+    <div class="section-label mb-4">Юридические данные</div>
+    <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:28px;">Реквизиты</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div style="background:#111113;border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="color:#52525b;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Полное наименование</div>
+        <div style="font-weight:600;color:#e4e4e7;font-size:0.9375rem;">ООО «РСК ГРУПП»</div>
+      </div>
+      <div style="background:#111113;border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="color:#52525b;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">ИНН / КПП</div>
+        <div style="font-weight:600;color:#e4e4e7;font-size:0.9375rem;">1657223686 / 168301001</div>
+      </div>
+      <div style="background:#111113;border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="color:#52525b;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">ОГРН</div>
+        <div style="font-weight:600;color:#e4e4e7;font-size:0.9375rem;">1161690093608</div>
+      </div>
+      <div style="background:#111113;border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="color:#52525b;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Юридический адрес</div>
+        <div style="font-weight:600;color:#e4e4e7;font-size:0.9375rem;">420036, Республика Татарстан, г. Казань, Теплично-Комбинатская ул., д. 5В</div>
+      </div>
+      <div style="background:#111113;border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="color:#52525b;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Телефон</div>
+        <div style="font-weight:600;font-size:0.9375rem;"><a href="tel:+79600796853" class="hover:text-amber-400 transition-colors" style="color:#f59e0b;">+7 960 079-68-53</a></div>
+      </div>
+      <div style="background:#111113;border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="color:#52525b;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">E-mail</div>
+        <div style="font-weight:600;font-size:0.9375rem;"><a href="mailto:mail@rsc-groupp.ru" class="hover:text-amber-400 transition-colors" style="color:#f59e0b;">mail@rsc-groupp.ru</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: #09090b; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-black" style="background: linear-gradient(135deg, #f59e0b, #d97706);">РСК</div>
+            <span class="font-bold text-white text-lg">РСК ГРУПП</span>
+          </div>
+          <p style="color:#52525b;font-size:0.875rem;line-height:1.6;margin-bottom:18px;">Производитель LED-оборудования. Казань, с 2016 года.</p>
+          <div class="flex gap-3">
+            <a href="#" style="width:34px;height:34px;border-radius:8px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-size:0.75rem;font-weight:700;" class="hover:bg-amber-500 hover:text-black transition-all">ВК</a>
+            <a href="#" style="width:34px;height:34px;border-radius:8px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-size:0.75rem;font-weight:700;" class="hover:bg-amber-500 hover:text-black transition-all">TG</a>
+            <a href="#" style="width:34px;height:34px;border-radius:8px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-size:0.75rem;font-weight:700;" class="hover:bg-amber-500 hover:text-black transition-all">YT</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Продукция</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="каталог.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Наружное освещение</a></li>
+            <li><a href="каталог.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Внутреннее освещение</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Компания</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="о_компании.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">О нас</a></li>
+            <li><a href="заказчику.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Заказчику</a></li>
+            <li><a href="наши_объекты.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Наши объекты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Контакты</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li style="color:#52525b;font-size:0.875rem;">Казань, Теплично-Комбинатская, 5В</li>
+            <li><a href="tel:+79600796853" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">+7 960 079-68-53</a></li>
+            <li><a href="mailto:mail@rsc-groupp.ru" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">mail@rsc-groupp.ru</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.05);">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
+        <p style="color:#3f3f46;font-size:0.75rem;">© 2026 ООО «РСК ГРУПП» · ИНН 1657223686</p>
+        <a href="#" style="color:#3f3f46;font-size:0.75rem;" class="hover:text-zinc-400 transition-colors">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function submitForm(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Отправляем...';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      setTimeout(() => {
+        form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+        document.getElementById('successMsg').style.display = 'block';
+        btn.textContent = 'Отправить сообщение';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        setTimeout(() => { document.getElementById('successMsg').style.display = 'none'; }, 5000);
+      }, 1200);
+    }
+  </script>
+</body>
+</html>

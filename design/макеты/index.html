@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Макеты дизайна — РСК ГРУПП</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #09090b; color: #ffffff; }
+    .card-hover { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.07); }
+    .card-hover:hover { border-color: rgba(245,158,11,0.35); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(245,158,11,0.08); }
+    .gradient-text { background: linear-gradient(135deg, #ffffff 0%, #fde68a 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 9999px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .mesh-bg { background: radial-gradient(ellipse at 20% 30%, rgba(245,158,11,0.05) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(139,92,246,0.04) 0%, transparent 50%); }
+  </style>
+</head>
+<body class="mesh-bg min-h-screen">
+
+  <!-- Header -->
+  <header style="border-bottom: 1px solid rgba(255,255,255,0.06);" class="py-5 px-8">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-black" style="background: linear-gradient(135deg, #f59e0b, #d97706);">РСК</div>
+        <div>
+          <div class="font-bold text-white text-lg leading-none">РСК ГРУПП</div>
+          <div class="text-zinc-500 text-xs mt-0.5">Макеты дизайна сайта</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-zinc-500 text-sm">Референс:</span>
+        <a href="https://www.bega.com" target="_blank" class="text-amber-400 hover:text-amber-300 text-sm font-medium transition-colors">bega.com ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-8 pt-16 pb-12">
+    <div class="mb-3">
+      <span class="badge text-amber-400" style="background: rgba(245,158,11,0.1);">Дизайн-система</span>
+    </div>
+    <h1 class="text-5xl font-bold mb-4 gradient-text">Макеты сайта РСК ГРУПП</h1>
+    <p class="text-zinc-400 text-xl max-w-2xl leading-relaxed">
+      Набор дизайн-макетов, разработанных по референсу <span class="text-white">bega.com</span> — 
+      крупные editorial-секции, BEGA-style карточки и тёмная тема с amber-акцентом.
+    </p>
+
+    <!-- Design tokens -->
+    <div class="flex flex-wrap items-center gap-6 mt-8 pt-8" style="border-top: 1px solid rgba(255,255,255,0.06);">
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-full" style="background:#09090b; border: 1px solid rgba(255,255,255,0.2);"></div>
+        <span class="text-zinc-400 text-xs">zinc-950 · Фон</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-full" style="background:#18181b;"></div>
+        <span class="text-zinc-400 text-xs">zinc-900 · Поверхность</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-full" style="background:#27272a;"></div>
+        <span class="text-zinc-400 text-xs">zinc-800 · Карточки</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-full" style="background:#f59e0b;"></div>
+        <span class="text-zinc-400 text-xs">amber-500 · Акцент</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-full" style="background:#fbbf24;"></div>
+        <span class="text-zinc-400 text-xs">amber-400 · Hover</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-full" style="background:#a1a1aa;"></div>
+        <span class="text-zinc-400 text-xs">zinc-400 · Текст</span>
+      </div>
+      <div class="ml-auto text-zinc-600 text-xs">Шрифт: Inter</div>
+    </div>
+  </section>
+
+  <!-- Pages grid -->
+  <section class="max-w-7xl mx-auto px-8 pb-20">
+    <h2 class="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-8">Страницы — 7 макетов</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Главная -->
+      <a href="главная.html" class="card-hover rounded-2xl overflow-hidden block" style="background: #18181b;">
+        <div class="relative h-48 overflow-hidden" style="background: linear-gradient(135deg, #1c1917 0%, #0c0a09 100%);">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=60" class="w-full h-full object-cover opacity-50" alt="">
+          <div class="absolute inset-0 flex items-end p-5" style="background: linear-gradient(to top, rgba(24,24,27,0.95) 0%, transparent 60%);">
+            <span class="text-amber-400 text-xs font-semibold uppercase tracking-wider">01 / Главная</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-white font-semibold text-lg mb-2">Главная страница</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Fullscreen hero, блок статистики, editorial-секции «В фокусе», превью каталога, CTA-баннер</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Hero</span>
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Editorial</span>
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">CTA</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- О компании -->
+      <a href="о_компании.html" class="card-hover rounded-2xl overflow-hidden block" style="background: #18181b;">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&auto=format&fit=crop&q=60" class="w-full h-full object-cover opacity-40" alt="">
+          <div class="absolute inset-0 flex items-end p-5" style="background: linear-gradient(to top, rgba(24,24,27,0.95) 0%, transparent 60%);">
+            <span class="text-amber-400 text-xs font-semibold uppercase tracking-wider">02 / О компании</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-white font-semibold text-lg mb-2">О компании</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Editorial-история, ценности с иконками, производство 50/50 фото-текст, реквизиты</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">История</span>
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Производство</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Заказчику -->
+      <a href="заказчику.html" class="card-hover rounded-2xl overflow-hidden block" style="background: #18181b;">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&auto=format&fit=crop&q=60" class="w-full h-full object-cover opacity-40" alt="">
+          <div class="absolute inset-0 flex items-end p-5" style="background: linear-gradient(to top, rgba(24,24,27,0.95) 0%, transparent 60%);">
+            <span class="text-amber-400 text-xs font-semibold uppercase tracking-wider">03 / Заказчику</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-white font-semibold text-lg mb-2">Заказчику</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Преимущества в крупных карточках, 4-шаговый таймлайн, технологии, CTA</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">B2B</span>
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Таймлайн</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Каталог -->
+      <a href="каталог.html" class="card-hover rounded-2xl overflow-hidden block" style="background: #18181b;">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&auto=format&fit=crop&q=60" class="w-full h-full object-cover opacity-40" alt="">
+          <div class="absolute inset-0 flex items-end p-5" style="background: linear-gradient(to top, rgba(24,24,27,0.95) 0%, transparent 60%);">
+            <span class="text-amber-400 text-xs font-semibold uppercase tracking-wider">04 / Каталог</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-white font-semibold text-lg mb-2">Каталог продукции</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">BEGA-style сетка категорий с hover-эффектом, листинг товаров с фото и характеристиками</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Категории</span>
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Продукты</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Карточка товара -->
+      <a href="карточка_товара.html" class="card-hover rounded-2xl overflow-hidden block" style="background: #18181b;">
+        <div class="relative h-48 overflow-hidden" style="background: #0c0a09;">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-24 h-24 rounded-full" style="background: radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%); border: 1px solid rgba(245,158,11,0.2);"></div>
+          </div>
+          <div class="absolute inset-0 flex items-end p-5" style="background: linear-gradient(to top, rgba(24,24,27,0.95) 0%, transparent 60%);">
+            <span class="text-amber-400 text-xs font-semibold uppercase tracking-wider">05 / Карточка товара</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-white font-semibold text-lg mb-2">Карточка товара</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Крупное фото/3D-зона, таблица характеристик, кнопки BIM/IES, связанные проекты</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">3D-вьюер</span>
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">BIM/IES</span>
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Спецификации</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Наши объекты -->
+      <a href="наши_объекты.html" class="card-hover rounded-2xl overflow-hidden block" style="background: #18181b;">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60" class="w-full h-full object-cover opacity-50" alt="">
+          <div class="absolute inset-0 flex items-end p-5" style="background: linear-gradient(to top, rgba(24,24,27,0.95) 0%, transparent 60%);">
+            <span class="text-amber-400 text-xs font-semibold uppercase tracking-wider">06 / Наши объекты</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-white font-semibold text-lg mb-2">Наши объекты</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Фильтр по категориям, editorial-грид реализованных проектов как в BEGA References</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Портфолио</span>
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Фильтр</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Контакты -->
+      <a href="контакты.html" class="card-hover rounded-2xl overflow-hidden block md:col-span-2 lg:col-span-1" style="background: #18181b;">
+        <div class="relative h-48 overflow-hidden" style="background: linear-gradient(135deg, #1c1917, #09090b);">
+          <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-30">
+            <div class="w-16 h-16 rounded-full border border-amber-500/30"></div>
+            <div class="w-24 h-24 rounded-full border border-amber-500/20"></div>
+            <div class="w-12 h-12 rounded-full border border-amber-500/40"></div>
+          </div>
+          <div class="absolute inset-0 flex items-end p-5" style="background: linear-gradient(to top, rgba(24,24,27,0.95) 0%, transparent 60%);">
+            <span class="text-amber-400 text-xs font-semibold uppercase tracking-wider">07 / Контакты</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-white font-semibold text-lg mb-2">Контакты</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Контактная форма, реквизиты, соцсети, карта расположения завода в Казани</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Форма</span>
+            <span class="badge text-zinc-400" style="background: rgba(255,255,255,0.05);">Реквизиты</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Info bar -->
+  <div class="max-w-7xl mx-auto px-8 pb-16">
+    <div class="rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4" style="background: rgba(245,158,11,0.05); border: 1px solid rgba(245,158,11,0.15);">
+      <div>
+        <div class="text-amber-400 font-semibold mb-1">Как открыть макеты</div>
+        <p class="text-zinc-400 text-sm">Все файлы — самодостаточные HTML-страницы. Откройте любой файл двойным кликом в браузере. Сервер не нужен.</p>
+      </div>
+      <div class="flex gap-3 shrink-0">
+        <a href="главная.html" class="px-5 py-2.5 rounded-xl font-semibold text-sm text-zinc-900 transition-all" style="background: #f59e0b;">Открыть Главную →</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

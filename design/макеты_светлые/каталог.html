@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог продукции — РСК ГРУПП</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #ffffff; color: #18181b; }
+
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #b45309; }
+    .accent { color: #d97706; }
+
+    .amber-btn { background: #d97706; color: #ffffff; font-weight: 600; transition: all 0.25s; border: none; }
+    .amber-btn:hover { background: #b45309; box-shadow: 0 8px 24px rgba(217,119,6,0.2); }
+    .outline-btn { border: 1px solid #d4d4d8; color: #18181b; font-weight: 500; transition: all 0.25s; }
+    .outline-btn:hover { border-color: #d97706; color: #d97706; }
+
+    .nav-link { color: #71717a; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover { color: #18181b; }
+
+    /* Category cards */
+    .cat-card { position: relative; overflow: hidden; border-radius: 20px; cursor: pointer; transition: all 0.35s ease; border: 1px solid rgba(0,0,0,0.06); }
+    .cat-card img { transition: transform 0.5s ease; }
+    .cat-card:hover img { transform: scale(1.05); }
+    .cat-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+    .cat-card:hover .cat-arrow { transform: translateX(4px); }
+    .cat-arrow { transition: transform 0.3s; }
+
+    /* Product cards */
+    .prod-card { background: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,0.07); transition: all 0.3s ease; cursor: pointer; }
+    .prod-card:hover { border-color: rgba(217,119,6,0.35); box-shadow: 0 12px 40px rgba(0,0,0,0.07); transform: translateY(-3px); }
+    .prod-card:hover .prod-img { transform: scale(1.04); }
+    .prod-img { transition: transform 0.4s ease; }
+    .prod-badge { display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header style="background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); position: fixed; top:0; left:0; right:0; z-index:50;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8" style="height: 76px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="главная.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="background: linear-gradient(135deg, #d97706, #b45309);">РСК</div>
+        <span class="font-bold text-zinc-900 text-lg tracking-tight">РСК ГРУПП</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="главная.html" class="nav-link">Главная</a>
+        <a href="каталог.html" class="nav-link" style="color:#18181b;">Продукция</a>
+        <a href="карточка_товара.html" class="nav-link">RSC GLOBE</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="tel:+79600796853" class="hidden md:block text-zinc-400 hover:text-zinc-700 text-sm transition-colors">+7 960 079-68-53</a>
+        <a href="#" class="px-4 py-2 rounded-lg text-sm amber-btn">Заказать звонок</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page header -->
+  <section style="padding-top: 76px;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <nav style="display:flex;gap:8px;align-items:center;margin-bottom:20px;font-size:0.8rem;color:#a1a1aa;">
+        <a href="главная.html" class="hover:text-amber-700 transition-colors">Главная</a>
+        <span>&rsaquo;</span>
+        <span style="color:#52525b;">Продукция</span>
+      </nav>
+      <div class="section-label mb-4">Каталог</div>
+      <div class="flex items-end justify-between flex-wrap gap-6">
+        <div>
+          <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; color: #18181b;">
+            Продукция <span class="accent">РСК ГРУПП</span>
+          </h1>
+          <p style="color:#71717a;font-size:1rem;margin-top:12px;max-width:480px;line-height:1.6;">
+            12 серий светильников для наружного и внутреннего освещения.
+            Собственное производство, гарантия 5 лет.
+          </p>
+        </div>
+        <a href="#" class="px-6 py-3 rounded-xl text-sm outline-btn shrink-0">Задать вопрос</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category cards (BEGA-style) -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <a href="#outdoor" class="cat-card" style="height:310px;display:block;">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(255,255,255,0.95) 0%,rgba(255,255,255,0.4) 50%,transparent 100%);"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:30px;display:flex;justify-content:space-between;align-items:flex-end;">
+          <div>
+            <div style="font-size:0.7rem;color:#b45309;text-transform:uppercase;letter-spacing:0.12em;font-weight:600;margin-bottom:6px;">8 продуктов</div>
+            <h2 style="font-size:1.5rem;font-weight:800;color:#18181b;margin-bottom:6px;">Наружное освещение</h2>
+            <p style="color:#71717a;font-size:0.875rem;max-width:300px;">Уличные, дорожные и парковые. RSC GLOBE, ASTRA, NUR, FLASH</p>
+          </div>
+          <div class="cat-arrow" style="width:44px;height:44px;border-radius:50%;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#indoor" class="cat-card" style="height:310px;display:block;">
+        <img src="https://images.unsplash.com/photo-1517467139701-4429b5c06c19?w=900&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(255,255,255,0.95) 0%,rgba(255,255,255,0.4) 50%,transparent 100%);"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:30px;display:flex;justify-content:space-between;align-items:flex-end;">
+          <div>
+            <div style="font-size:0.7rem;color:#b45309;text-transform:uppercase;letter-spacing:0.12em;font-weight:600;margin-bottom:6px;">4 продукта</div>
+            <h2 style="font-size:1.5rem;font-weight:800;color:#18181b;margin-bottom:6px;">Внутреннее освещение</h2>
+            <p style="color:#71717a;font-size:0.875rem;max-width:300px;">Офисные, промышленные и коммерческие. RSC OFFICE, PROM, COMFORT</p>
+          </div>
+          <div class="cat-arrow" style="width:44px;height:44px;border-radius:50%;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Outdoor products -->
+  <section id="outdoor" class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid rgba(0,0,0,0.06);">
+      <div>
+        <div class="section-label mb-2">Категория</div>
+        <h2 style="font-size:1.5rem;font-weight:800;color:#18181b;">Наружное освещение</h2>
+      </div>
+      <span style="color:#a1a1aa;font-size:0.875rem;">8 продуктов</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="карточка_товара.html" class="prod-card block">
+        <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          <div style="position:absolute;top:10px;right:10px;">
+            <span class="prod-badge" style="background:rgba(217,119,6,0.1);color:#b45309;">IP65</span>
+          </div>
+        </div>
+        <div style="padding:16px;">
+          <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Уличный</div>
+          <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC GLOBE</h3>
+          <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Консольный для магистральных дорог</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:0.8rem;color:#a1a1aa;">30--200 Вт</span>
+            <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="карточка_товара.html" class="prod-card block">
+        <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          <div style="position:absolute;top:10px;right:10px;">
+            <span class="prod-badge" style="background:rgba(217,119,6,0.1);color:#b45309;">IP65</span>
+          </div>
+        </div>
+        <div style="padding:16px;">
+          <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Уличный</div>
+          <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC ASTRA V</h3>
+          <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Для жилых кварталов</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:0.8rem;color:#a1a1aa;">30--120 Вт</span>
+            <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="карточка_товара.html" class="prod-card block">
+        <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          <div style="position:absolute;top:10px;right:10px;">
+            <span class="prod-badge" style="background:rgba(217,119,6,0.1);color:#b45309;">IP65</span>
+          </div>
+        </div>
+        <div style="padding:16px;">
+          <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Уличный</div>
+          <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC ASTRA T2</h3>
+          <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Трапециевидный консольный</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:0.8rem;color:#a1a1aa;">50--150 Вт</span>
+            <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="карточка_товара.html" class="prod-card block">
+        <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+          <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          <div style="position:absolute;top:10px;right:10px;">
+            <span class="prod-badge" style="background:rgba(217,119,6,0.1);color:#b45309;">IP67</span>
+          </div>
+        </div>
+        <div style="padding:16px;">
+          <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Промышленный</div>
+          <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC NUR 108М</h3>
+          <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Прожектор для спортобъектов</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:0.8rem;color:#a1a1aa;">108--324 Вт</span>
+            <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="карточка_товара.html" class="prod-card block">
+        <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop&q=50" class="prod-img w-full h-full object-cover" alt="">
+          <div style="position:absolute;top:10px;right:10px;">
+            <span class="prod-badge" style="background:rgba(217,119,6,0.1);color:#b45309;">IP67</span>
+          </div>
+        </div>
+        <div style="padding:16px;">
+          <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Промышленный</div>
+          <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC NUR 159М</h3>
+          <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Мощный прожектор для стадионов</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:0.8rem;color:#a1a1aa;">159--477 Вт</span>
+            <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="карточка_товара.html" class="prod-card block">
+        <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          <div style="position:absolute;top:10px;right:10px;">
+            <span class="prod-badge" style="background:rgba(217,119,6,0.1);color:#b45309;">IP65</span>
+          </div>
+        </div>
+        <div style="padding:16px;">
+          <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Архитектурный</div>
+          <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC FLASH Q</h3>
+          <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Подсветка зданий</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:0.8rem;color:#a1a1aa;">20--80 Вт</span>
+            <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="карточка_товара.html" class="prod-card block">
+        <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+          <img src="https://images.unsplash.com/photo-1573455494060-c5595004fb6c?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          <div style="position:absolute;top:10px;right:10px;">
+            <span class="prod-badge" style="background:rgba(217,119,6,0.1);color:#b45309;">IP65</span>
+          </div>
+        </div>
+        <div style="padding:16px;">
+          <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Архитектурный</div>
+          <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC FLASH TM1</h3>
+          <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Линейный прожектор</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:0.8rem;color:#a1a1aa;">30--100 Вт</span>
+            <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="карточка_товара.html" class="prod-card block">
+        <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+          <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          <div style="position:absolute;top:10px;left:10px;">
+            <span class="prod-badge" style="background:#d97706;color:#fff;">Новинка</span>
+          </div>
+          <div style="position:absolute;top:10px;right:10px;">
+            <span class="prod-badge" style="background:rgba(217,119,6,0.1);color:#b45309;">IP65</span>
+          </div>
+        </div>
+        <div style="padding:16px;">
+          <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Уличный</div>
+          <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC GLOBE HAN</h3>
+          <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Нового поколения</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:0.8rem;color:#a1a1aa;">40--180 Вт</span>
+            <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Indoor products -->
+  <section id="indoor" style="background:#f9fafb;border-top:1px solid rgba(0,0,0,0.04);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid rgba(0,0,0,0.06);">
+        <div>
+          <div class="section-label mb-2">Категория</div>
+          <h2 style="font-size:1.5rem;font-weight:800;color:#18181b;">Внутреннее освещение</h2>
+        </div>
+        <span style="color:#a1a1aa;font-size:0.875rem;">4 продукта</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="карточка_товара.html" class="prod-card block" style="background:#fff;">
+          <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+            <img src="https://images.unsplash.com/photo-1517467139701-4429b5c06c19?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Офисный</div>
+            <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC UNIVERSAL LINE</h3>
+            <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Линейный для офисов</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:0.8rem;color:#a1a1aa;">24--72 Вт</span>
+              <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="карточка_товара.html" class="prod-card block" style="background:#fff;">
+          <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Офисный</div>
+            <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC OFFICE</h3>
+            <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Встраиваемый панельный</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:0.8rem;color:#a1a1aa;">36--72 Вт</span>
+              <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="карточка_товара.html" class="prod-card block" style="background:#fff;">
+          <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Торговый</div>
+            <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC COMFORT</h3>
+            <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Трековый для ТЦ и магазинов</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:0.8rem;color:#a1a1aa;">20--60 Вт</span>
+              <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="карточка_товара.html" class="prod-card block" style="background:#fff;">
+          <div style="height:200px;overflow:hidden;position:relative;background:#f4f4f5;">
+            <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400&auto=format&fit=crop&q=70" class="prod-img w-full h-full object-cover" alt="">
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.7rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Промышленный</div>
+            <h3 style="font-weight:700;font-size:0.9375rem;color:#18181b;margin-bottom:5px;">RSC PROM</h3>
+            <p style="color:#71717a;font-size:0.8rem;line-height:1.4;margin-bottom:10px;">Потолочный промышленный</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:0.8rem;color:#a1a1aa;">50--200 Вт</span>
+              <span style="color:#d97706;font-size:0.8rem;font-weight:600;">Подробнее &rarr;</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA for designers -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+    <div style="border-radius:20px;padding:44px;background:#f9fafb;border:1px solid rgba(0,0,0,0.06);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;">
+      <div>
+        <div class="section-label mb-3">Для проектировщиков</div>
+        <h3 style="font-size:1.3rem;font-weight:800;color:#18181b;margin-bottom:8px;">Нужны BIM-модели и IES-файлы?</h3>
+        <p style="color:#71717a;font-size:0.875rem;max-width:400px;">Зарегистрируйтесь -- получите доступ к технической документации.</p>
+      </div>
+      <a href="#" class="px-6 py-3 rounded-xl text-sm font-semibold outline-btn shrink-0">Раздел для проектировщиков &rarr;</a>
+    </div>
+  </section>
+
+  <!-- Footer (dark) -->
+  <footer style="background: #18181b;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="background: linear-gradient(135deg, #d97706, #b45309);">РСК</div>
+            <span class="font-bold text-white text-lg">РСК ГРУПП</span>
+          </div>
+          <p style="color:#71717a;font-size:0.875rem;line-height:1.6;">Производитель LED-оборудования. Казань.</p>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Продукция</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="#outdoor" style="color:#71717a;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Наружное</a></li>
+            <li><a href="#indoor" style="color:#71717a;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Внутреннее</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Компания</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="#" style="color:#71717a;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">О нас</a></li>
+            <li><a href="#" style="color:#71717a;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Объекты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Контакты</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="tel:+79600796853" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">+7 960 079-68-53</a></li>
+            <li><a href="mailto:mail@rsc-groupp.ru" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">mail@rsc-groupp.ru</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
+        <p style="color:#3f3f46;font-size:0.75rem;">&copy; 2026 ООО &laquo;РСК ГРУПП&raquo;</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

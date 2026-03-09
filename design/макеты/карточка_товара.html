@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSC GLOBE — Карточка товара — РСК ГРУПП</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #09090b; color: #ffffff; }
+    .gradient-text { background: linear-gradient(135deg, #ffffff 0%, #fde68a 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .amber-btn { background: #f59e0b; color: #0a0a0a; font-weight: 600; transition: all 0.25s; }
+    .amber-btn:hover { background: #fbbf24; box-shadow: 0 0 30px rgba(245,158,11,0.3); }
+    .outline-btn { border: 1px solid rgba(255,255,255,0.18); color: white; transition: all 0.25s; }
+    .outline-btn:hover { border-color: #f59e0b; color: #f59e0b; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #f59e0b; }
+    .nav-link { color: #a1a1aa; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover { color: #ffffff; }
+    .thumb { width: 68px; height: 68px; border-radius: 10px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s; }
+    .thumb.active { border-color: #f59e0b; }
+    .thumb:hover { border-color: rgba(245,158,11,0.5); }
+    .tab-btn { padding: 10px 20px; border-radius: 8px; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all 0.2s; color: #71717a; }
+    .tab-btn.active { background: rgba(245,158,11,0.1); color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
+    .spec-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .spec-row:last-child { border-bottom: none; }
+    .download-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 18px 20px; display: flex; align-items: center; gap: 14px; cursor: pointer; transition: all 0.2s; }
+    .download-card:hover { border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.03); }
+    .prod-thumb-card { background: #111113; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s; }
+    .prod-thumb-card:hover { border-color: rgba(245,158,11,0.3); transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header style="background: rgba(9,9,11,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); position: fixed; top:0; left:0; right:0; z-index:50;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8" style="height: 76px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="главная.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-black" style="background: linear-gradient(135deg, #f59e0b, #d97706);">РСК</div>
+        <span class="font-bold text-white text-lg tracking-tight">РСК ГРУПП</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="о_компании.html" class="nav-link">О компании</a>
+        <a href="заказчику.html" class="nav-link">Заказчику</a>
+        <a href="каталог.html" class="nav-link" style="color:white;">Продукция</a>
+        <a href="наши_объекты.html" class="nav-link">Наши объекты</a>
+        <a href="контакты.html" class="nav-link">Контакты</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="tel:+79600796853" class="hidden md:block text-zinc-400 hover:text-white text-sm transition-colors">+7 960 079-68-53</a>
+        <a href="контакты.html" class="px-4 py-2 rounded-lg text-sm amber-btn">Заказать звонок</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 76px;">
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5">
+      <nav style="display:flex;gap:8px;align-items:center;font-size:0.8rem;color:#52525b;">
+        <a href="главная.html" class="hover:text-amber-400 transition-colors">Главная</a>
+        <span>›</span>
+        <a href="каталог.html" class="hover:text-amber-400 transition-colors">Продукция</a>
+        <span>›</span>
+        <a href="каталог.html#outdoor" class="hover:text-amber-400 transition-colors">Наружное освещение</a>
+        <span>›</span>
+        <span style="color:#a1a1aa;">RSC GLOBE</span>
+      </nav>
+    </div>
+
+    <!-- Product Main Section -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <!-- Left: Image Gallery -->
+        <div>
+          <!-- Main image -->
+          <div id="mainImg" style="border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:#0d0d0f;position:relative;margin-bottom:12px;border:1px solid rgba(255,255,255,0.06);">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&auto=format&fit=crop&q=80" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" alt="RSC GLOBE">
+            <!-- 3D viewer placeholder -->
+            <div style="position:absolute;bottom:16px;right:16px;background:rgba(9,9,11,0.85);backdrop-filter:blur(16px);border-radius:10px;padding:10px 14px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:8px;cursor:pointer;transition:border-color 0.2s;" class="hover:border-amber-500/30">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span style="font-size:0.75rem;font-weight:600;color:#a1a1aa;">3D-вьюер</span>
+            </div>
+          </div>
+          <!-- Thumbnails -->
+          <div style="display:flex;gap:10px;">
+            <div class="thumb active" onclick="this.parentElement.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active')">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" alt="">
+            </div>
+            <div class="thumb" onclick="this.parentElement.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active')">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" alt="">
+            </div>
+            <div class="thumb" onclick="this.parentElement.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active')">
+              <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=200&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" alt="">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Product Info -->
+        <div style="padding-top: 8px;">
+          <div class="section-label mb-3">Наружное освещение · Консольный</div>
+          <h1 style="font-size:2.5rem;font-weight:900;line-height:1.1;margin-bottom:16px;">
+            <span class="gradient-text">RSC GLOBE</span>
+          </h1>
+          <p style="color:#a1a1aa;font-size:1rem;line-height:1.7;margin-bottom:28px;">
+            Консольный светодиодный светильник для освещения магистральных дорог, 
+            улиц и дворовых территорий. Высокая световая отдача, защита от пыли и влаги IP65.
+          </p>
+
+          <!-- Quick specs chips -->
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;">
+            <span style="padding:6px 14px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:8px;font-size:0.8125rem;color:#f59e0b;font-weight:600;">30–200 Вт</span>
+            <span style="padding:6px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-size:0.8125rem;color:#a1a1aa;">IP65 / IK10</span>
+            <span style="padding:6px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-size:0.8125rem;color:#a1a1aa;">160 лм/Вт</span>
+            <span style="padding:6px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-size:0.8125rem;color:#a1a1aa;">50 000 ч</span>
+            <span style="padding:6px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-size:0.8125rem;color:#a1a1aa;">−60...+50°C</span>
+          </div>
+
+          <!-- Warranty badge -->
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15);border-radius:12px;margin-bottom:28px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div>
+              <div style="font-weight:700;color:#f59e0b;font-size:0.875rem;">Гарантия 5 лет</div>
+              <div style="color:#71717a;font-size:0.75rem;">Официальная от производителя</div>
+            </div>
+          </div>
+
+          <!-- CTA buttons -->
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;">
+            <a href="контакты.html" class="px-7 py-3.5 rounded-xl text-base amber-btn flex-1 text-center">Запросить КП</a>
+            <a href="контакты.html" class="px-7 py-3.5 rounded-xl text-base outline-btn flex-1 text-center">Задать вопрос</a>
+          </div>
+
+          <!-- Downloads -->
+          <div>
+            <div style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#52525b;margin-bottom:12px;">Документация</div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div class="download-card">
+                <div style="width:40px;height:40px;border-radius:10px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </div>
+                <div>
+                  <div style="font-weight:600;font-size:0.875rem;">BIM-модель (Revit)</div>
+                  <div style="color:#52525b;font-size:0.75rem;">RSC_GLOBE_BIM.rfa · 2.4 MB</div>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#71717a" stroke-width="2" style="margin-left:auto;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <div class="download-card">
+                <div style="width:40px;height:40px;border-radius:10px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </div>
+                <div>
+                  <div style="font-weight:600;font-size:0.875rem;">Фотометрия IES</div>
+                  <div style="color:#52525b;font-size:0.75rem;">RSC_GLOBE_100W.ies · 84 KB</div>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#71717a" stroke-width="2" style="margin-left:auto;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <div class="download-card">
+                <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div>
+                  <div style="font-weight:600;font-size:0.875rem;">Паспорт изделия</div>
+                  <div style="color:#52525b;font-size:0.75rem;">RSC_GLOBE_passport.pdf · 1.2 MB</div>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#71717a" stroke-width="2" style="margin-left:auto;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs Tabs -->
+    <section style="background: #0d0d0f; border-top: 1px solid rgba(255,255,255,0.05);">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <!-- Tab buttons -->
+        <div style="display:flex;gap:6px;margin-bottom:32px;background:rgba(255,255,255,0.03);border-radius:12px;padding:5px;border:1px solid rgba(255,255,255,0.06);width:fit-content;">
+          <button class="tab-btn active" onclick="showTab('specs',this)">Характеристики</button>
+          <button class="tab-btn" onclick="showTab('dims',this)">Габариты</button>
+          <button class="tab-btn" onclick="showTab('mods',this)">Модификации</button>
+        </div>
+
+        <!-- Specs table -->
+        <div id="tab-specs">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h3 style="font-weight:700;font-size:1rem;margin-bottom:16px;color:#a1a1aa;text-transform:uppercase;font-size:0.75rem;letter-spacing:0.1em;">Электрические параметры</h3>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Мощность</span><span style="font-weight:600;font-size:0.875rem;">30 / 50 / 80 / 100 / 150 / 200 Вт</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Напряжение питания</span><span style="font-weight:600;font-size:0.875rem;">85–265 В AC</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Частота</span><span style="font-weight:600;font-size:0.875rem;">50/60 Гц</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Коэффициент мощности</span><span style="font-weight:600;font-size:0.875rem;">≥ 0.95</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">THD</span><span style="font-weight:600;font-size:0.875rem;">&lt; 10%</span></div>
+            </div>
+            <div>
+              <h3 style="font-weight:700;font-size:1rem;margin-bottom:16px;color:#a1a1aa;text-transform:uppercase;font-size:0.75rem;letter-spacing:0.1em;">Световые параметры</h3>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Световая отдача</span><span style="font-weight:600;font-size:0.875rem;">до 160 лм/Вт</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Световой поток</span><span style="font-weight:600;font-size:0.875rem;">4500–32000 лм</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Цветовая температура</span><span style="font-weight:600;font-size:0.875rem;">3000 / 4000 / 5000 K</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">CRI (Ra)</span><span style="font-weight:600;font-size:0.875rem;">≥ 80</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Ресурс световых диодов</span><span style="font-weight:600;font-size:0.875rem;">50 000 часов (L70)</span></div>
+            </div>
+            <div>
+              <h3 style="font-weight:700;font-size:1rem;margin-bottom:16px;color:#a1a1aa;text-transform:uppercase;font-size:0.75rem;letter-spacing:0.1em;">Механика и защита</h3>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Степень защиты</span><span style="font-weight:600;font-size:0.875rem;">IP65</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Ударостойкость</span><span style="font-weight:600;font-size:0.875rem;">IK10</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Материал корпуса</span><span style="font-weight:600;font-size:0.875rem;">Алюминиевый сплав</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Диаметр трубы</span><span style="font-weight:600;font-size:0.875rem;">40–60 мм</span></div>
+            </div>
+            <div>
+              <h3 style="font-weight:700;font-size:1rem;margin-bottom:16px;color:#a1a1aa;text-transform:uppercase;font-size:0.75rem;letter-spacing:0.1em;">Климатические условия</h3>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Рабочая температура</span><span style="font-weight:600;font-size:0.875rem;">−60°C до +50°C</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Влажность</span><span style="font-weight:600;font-size:0.875rem;">до 98%</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Ветровая нагрузка</span><span style="font-weight:600;font-size:0.875rem;">до 55 м/с</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.875rem;">Климатическое исполнение</span><span style="font-weight:600;font-size:0.875rem;">УХЛ1</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-dims" style="display:none;">
+          <div style="background:#111113;border-radius:16px;padding:40px;border:1px solid rgba(255,255,255,0.06);text-align:center;">
+            <div style="color:#71717a;font-size:0.875rem;margin-bottom:16px;">Чертёж с габаритами (мм)</div>
+            <div style="width:100%;max-width:600px;margin:0 auto;aspect-ratio:16/9;background:#0d0d0f;border-radius:12px;border:1px dashed rgba(255,255,255,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#52525b" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span style="color:#52525b;font-size:0.875rem;">Габаритный чертёж</span>
+              <span style="color:#3f3f46;font-size:0.75rem;">Длина × ширина × высота: 680 × 320 × 90 мм</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-mods" style="display:none;">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div style="background:#111113;border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.06);">
+              <div style="color:#f59e0b;font-weight:700;margin-bottom:8px;">RSC GLOBE 50</div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.8125rem;">Мощность</span><span style="font-size:0.8125rem;">50 Вт</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.8125rem;">Световой поток</span><span style="font-size:0.8125rem;">8 000 лм</span></div>
+            </div>
+            <div style="background:#111113;border-radius:14px;padding:20px;border:1px solid rgba(245,158,11,0.25);">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <div style="color:#f59e0b;font-weight:700;">RSC GLOBE 100</div>
+                <span style="font-size:0.65rem;background:rgba(245,158,11,0.2);color:#f59e0b;padding:2px 8px;border-radius:4px;font-weight:600;text-transform:uppercase;">Топ</span>
+              </div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.8125rem;">Мощность</span><span style="font-size:0.8125rem;">100 Вт</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.8125rem;">Световой поток</span><span style="font-size:0.8125rem;">16 000 лм</span></div>
+            </div>
+            <div style="background:#111113;border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.06);">
+              <div style="color:#f59e0b;font-weight:700;margin-bottom:8px;">RSC GLOBE 150</div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.8125rem;">Мощность</span><span style="font-size:0.8125rem;">150 Вт</span></div>
+              <div class="spec-row"><span style="color:#71717a;font-size:0.8125rem;">Световой поток</span><span style="font-size:0.8125rem;">24 000 лм</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related projects -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;">
+        <div>
+          <div class="section-label mb-2">Применение</div>
+          <h2 style="font-size:1.5rem;font-weight:800;">Объекты с RSC GLOBE</h2>
+        </div>
+        <a href="наши_объекты.html" style="color:#71717a;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Все объекты →</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="наши_объекты.html" class="prod-thumb-card block" style="overflow:hidden;position:relative;">
+          <div style="height:180px;overflow:hidden;position:relative;">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.65;" alt="">
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.7rem;color:#f59e0b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Казань · 2024</div>
+            <h4 style="font-weight:700;font-size:0.9rem;">Парк «Кырлай»</h4>
+          </div>
+        </a>
+        <a href="наши_объекты.html" class="prod-thumb-card block" style="overflow:hidden;position:relative;">
+          <div style="height:180px;overflow:hidden;position:relative;">
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.65;" alt="">
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.7rem;color:#f59e0b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Татарстан · 2023</div>
+            <h4 style="font-weight:700;font-size:0.9rem;">Дорожное освещение М-7</h4>
+          </div>
+        </a>
+        <a href="наши_объекты.html" class="prod-thumb-card block" style="overflow:hidden;position:relative;">
+          <div style="height:180px;overflow:hidden;position:relative;">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.65;" alt="">
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.7rem;color:#f59e0b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Казань · 2024</div>
+            <h4 style="font-weight:700;font-size:0.9rem;">ЖК «Арт Сити»</h4>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Related products -->
+    <section style="background:#0d0d0f;border-top:1px solid rgba(255,255,255,0.05);">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-14">
+        <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:24px;">Похожие продукты</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <a href="карточка_товара.html" style="background:#18181b;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);transition:all 0.3s;display:block;" class="hover:border-amber-500/30">
+            <div style="height:140px;overflow:hidden;"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" alt=""></div>
+            <div style="padding:14px;"><div style="font-weight:700;font-size:0.875rem;margin-bottom:4px;">RSC ASTRA V</div><div style="color:#52525b;font-size:0.75rem;">30–120 Вт</div></div>
+          </a>
+          <a href="карточка_товара.html" style="background:#18181b;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);transition:all 0.3s;display:block;" class="hover:border-amber-500/30">
+            <div style="height:140px;overflow:hidden;"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" alt=""></div>
+            <div style="padding:14px;"><div style="font-weight:700;font-size:0.875rem;margin-bottom:4px;">RSC ASTRA T2</div><div style="color:#52525b;font-size:0.75rem;">50–150 Вт</div></div>
+          </a>
+          <a href="карточка_товара.html" style="background:#18181b;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);transition:all 0.3s;display:block;" class="hover:border-amber-500/30">
+            <div style="height:140px;overflow:hidden;"><img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=300&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" alt=""></div>
+            <div style="padding:14px;"><div style="font-weight:700;font-size:0.875rem;margin-bottom:4px;">RSC NUR 108М</div><div style="color:#52525b;font-size:0.75rem;">108–324 Вт</div></div>
+          </a>
+          <a href="карточка_товара.html" style="background:#18181b;border-radius:14px;overflow:hidden;border:1px solid rgba(245,158,11,0.2);transition:all 0.3s;display:block;" class="hover:border-amber-500/40">
+            <div style="height:140px;overflow:hidden;position:relative;"><img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=300&auto=format&fit=crop&q=70" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" alt=""><div style="position:absolute;top:8px;left:8px;background:rgba(245,158,11,0.9);color:#000;font-size:0.6rem;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;">Новинка</div></div>
+            <div style="padding:14px;"><div style="font-weight:700;font-size:0.875rem;margin-bottom:4px;">RSC GLOBE HAN</div><div style="color:#52525b;font-size:0.75rem;">40–180 Вт</div></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background: #09090b; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-black" style="background: linear-gradient(135deg, #f59e0b, #d97706);">РСК</div>
+            <span class="font-bold text-white text-lg">РСК ГРУПП</span>
+          </div>
+          <p style="color:#52525b;font-size:0.875rem;line-height:1.6;">Производитель LED-оборудования. Казань, с 2016 года.</p>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Продукция</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="каталог.html" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Каталог</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Компания</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="о_компании.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">О нас</a></li>
+            <li><a href="наши_объекты.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Наши объекты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Контакты</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="tel:+79600796853" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">+7 960 079-68-53</a></li>
+            <li><a href="mailto:mail@rsc-groupp.ru" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">mail@rsc-groupp.ru</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.05);">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
+        <p style="color:#3f3f46;font-size:0.75rem;">© 2026 ООО «РСК ГРУПП» · ИНН 1657223686</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function showTab(tabId, btn) {
+      document.getElementById('tab-specs').style.display = 'none';
+      document.getElementById('tab-dims').style.display = 'none';
+      document.getElementById('tab-mods').style.display = 'none';
+      document.getElementById('tab-' + tabId).style.display = 'block';
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>

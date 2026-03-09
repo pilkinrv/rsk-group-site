@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О компании — РСК ГРУПП</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #09090b; color: #ffffff; }
+    .glass-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); transition: all 0.3s ease; }
+    .glass-card:hover { border-color: rgba(245,158,11,0.3); box-shadow: 0 0 40px rgba(245,158,11,0.06); transform: translateY(-2px); }
+    .gradient-text { background: linear-gradient(135deg, #ffffff 0%, #fde68a 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .amber-btn { background: #f59e0b; color: #0a0a0a; font-weight: 600; transition: all 0.25s; }
+    .amber-btn:hover { background: #fbbf24; box-shadow: 0 0 30px rgba(245,158,11,0.3); }
+    .outline-btn { border: 1px solid rgba(255,255,255,0.18); color: white; transition: all 0.25s; }
+    .outline-btn:hover { border-color: #f59e0b; color: #f59e0b; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #f59e0b; }
+    .nav-link { color: #a1a1aa; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover { color: #ffffff; }
+    .timeline-line { position: absolute; left: 20px; top: 44px; bottom: 0; width: 1px; background: linear-gradient(to bottom, rgba(245,158,11,0.5), transparent); }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header style="background: rgba(9,9,11,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); position: fixed; top:0; left:0; right:0; z-index:50;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8" style="height: 76px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="главная.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-black" style="background: linear-gradient(135deg, #f59e0b, #d97706);">РСК</div>
+        <span class="font-bold text-white text-lg tracking-tight">РСК ГРУПП</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="о_компании.html" class="nav-link" style="color: white;">О компании</a>
+        <a href="заказчику.html" class="nav-link">Заказчику</a>
+        <a href="каталог.html" class="nav-link">Продукция</a>
+        <a href="наши_объекты.html" class="nav-link">Наши объекты</a>
+        <a href="контакты.html" class="nav-link">Контакты</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="tel:+79600796853" class="hidden md:block text-zinc-400 hover:text-white text-sm transition-colors">+7 960 079-68-53</a>
+        <a href="контакты.html" class="px-4 py-2 rounded-lg text-sm amber-btn">Заказать звонок</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section style="padding-top: 76px; position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0;">
+      <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1920&auto=format&fit=crop&q=70" style="width:100%; height:100%; object-fit:cover; opacity:0.2;" alt="">
+      <div style="position:absolute; inset:0; background: linear-gradient(to bottom, rgba(9,9,11,0.5) 0%, rgba(9,9,11,1) 100%);"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <nav style="display:flex;gap:8px;align-items:center;margin-bottom:20px;font-size:0.8rem;color:#52525b;">
+        <a href="главная.html" class="hover:text-amber-400 transition-colors">Главная</a>
+        <span>›</span>
+        <span style="color:#a1a1aa;">О компании</span>
+      </nav>
+      <div class="section-label mb-4">О нас</div>
+      <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; max-width: 700px;">
+        <span class="gradient-text">Производитель</span><br>
+        с собственным заводом
+      </h1>
+      <p style="color: #a1a1aa; font-size: 1.1rem; line-height: 1.7; max-width: 560px; margin-top: 20px;">
+        ООО «РСК ГРУПП» — российский производитель светодиодного 
+        осветительного оборудования. Работаем с 2016 года, завод в Казани.
+      </p>
+    </div>
+  </section>
+
+  <!-- Ключевые факты -->
+  <section style="background: #111113; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div style="text-align:center; padding: 24px;">
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#fff,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">2016</div>
+          <div style="color:#f59e0b;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-top:6px;">год основания</div>
+        </div>
+        <div style="text-align:center; padding: 24px;">
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#fff,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">1000</div>
+          <div style="color:#f59e0b;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-top:6px;">м² производства</div>
+        </div>
+        <div style="text-align:center; padding: 24px;">
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#fff,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">12+</div>
+          <div style="color:#f59e0b;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-top:6px;">серий продуктов</div>
+        </div>
+        <div style="text-align:center; padding: 24px;">
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#fff,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">100+</div>
+          <div style="color:#f59e0b;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-top:6px;">реализованных объектов</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- История (Timeline) -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div>
+        <div class="section-label mb-4">История</div>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; line-height: 1.2; margin-bottom: 40px;">
+          Путь от стартапа<br>
+          <span class="gradient-text">до производства</span>
+        </h2>
+        <div style="position: relative;">
+          <div style="position:absolute;left:20px;top:44px;bottom:20px;width:1px;background:linear-gradient(to bottom,rgba(245,158,11,0.6),transparent);"></div>
+
+          <!-- 2016 -->
+          <div style="display:flex;gap:20px;margin-bottom:36px;position:relative;">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;"></div>
+            </div>
+            <div>
+              <div style="color:#f59e0b;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">2016</div>
+              <h4 style="font-weight:700;font-size:1rem;margin-bottom:6px;">Основание компании</h4>
+              <p style="color:#71717a;font-size:0.875rem;line-height:1.6;">Регистрация ООО «РСК ГРУПП» в Казани. Начало разработки первой линейки светильников для уличного освещения.</p>
+            </div>
+          </div>
+
+          <!-- 2018 -->
+          <div style="display:flex;gap:20px;margin-bottom:36px;position:relative;">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;"></div>
+            </div>
+            <div>
+              <div style="color:#f59e0b;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">2018</div>
+              <h4 style="font-weight:700;font-size:1rem;margin-bottom:6px;">Собственный завод</h4>
+              <p style="color:#71717a;font-size:0.875rem;line-height:1.6;">Открытие производственной площадки на ул. Теплично-Комбинатская, 5В. Площадь 1000 м².</p>
+            </div>
+          </div>
+
+          <!-- 2021 -->
+          <div style="display:flex;gap:20px;margin-bottom:36px;position:relative;">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;"></div>
+            </div>
+            <div>
+              <div style="color:#f59e0b;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">2021</div>
+              <h4 style="font-weight:700;font-size:1rem;margin-bottom:6px;">Расширение линейки</h4>
+              <p style="color:#71717a;font-size:0.875rem;line-height:1.6;">Запуск серий RSC ASTRA и RSC NUR. Выход на рынок промышленного освещения. Первые крупные муниципальные контракты.</p>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div style="display:flex;gap:20px;position:relative;">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(245,158,11,0.25);border:2px solid rgba(245,158,11,0.6);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;"></div>
+            </div>
+            <div>
+              <div style="color:#f59e0b;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">2024–2025</div>
+              <h4 style="font-weight:700;font-size:1rem;margin-bottom:6px;">Сейчас</h4>
+              <p style="color:#71717a;font-size:0.875rem;line-height:1.6;">12 серий продуктов, 1000+ единиц в месяц, 100+ реализованных объектов по Татарстану и России.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Production image -->
+      <div>
+        <div style="border-radius:20px;overflow:hidden;aspect-ratio:3/4;position:relative;margin-bottom:20px;">
+          <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&auto=format&fit=crop&q=80" style="width:100%;height:100%;object-fit:cover;opacity:0.75;" alt="">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,9,11,0.6) 0%,transparent 50%);"></div>
+          <div style="position:absolute;bottom:24px;left:24px;right:24px;">
+            <div style="background:rgba(9,9,11,0.85);backdrop-filter:blur(16px);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,255,255,0.1);">
+              <div style="font-size:0.75rem;color:#f59e0b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Казань, Россия</div>
+              <div style="font-weight:700;font-size:1rem;">Завод на ул. Теплично-Комбинатская, 5В</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ценности -->
+  <section style="background: #0d0d0f; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div class="text-center mb-14">
+        <div class="section-label mb-3">Наши принципы</div>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800;">Ценности компании</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-8">
+          <div style="width:52px;height:52px;border-radius:14px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:22px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 style="font-weight:700;font-size:1.1rem;margin-bottom:12px;">Качество без компромиссов</h3>
+          <p style="color:#71717a;font-size:0.875rem;line-height:1.7;">Каждый светильник проходит многоэтапный контроль качества. Мы даём 5-летнюю гарантию и несём ответственность за каждое изделие.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-8">
+          <div style="width:52px;height:52px;border-radius:14px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:22px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 style="font-weight:700;font-size:1.1rem;margin-bottom:12px;">Партнёрский подход</h3>
+          <p style="color:#71717a;font-size:0.875rem;line-height:1.7;">Работаем как партнёры, а не поставщики. Помогаем с проектированием, предоставляем BIM-модели, консультируем на всех этапах.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-8">
+          <div style="width:52px;height:52px;border-radius:14px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:22px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3 style="font-weight:700;font-size:1.1rem;margin-bottom:12px;">Российское производство</h3>
+          <p style="color:#71717a;font-size:0.875rem;line-height:1.7;">Полный цикл на собственном заводе в Казани. Независимость от зарубежных сборщиков, стабильность поставок и цен.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Производство 50/50 (BEGA-style) -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+    <div class="section-label mb-3 text-center">Производство</div>
+    <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; text-align:center; margin-bottom: 60px;">Завод полного цикла</h2>
+
+    <!-- Full-width image -->
+    <div style="border-radius:20px;overflow:hidden;height:500px;position:relative;margin-bottom:5px;">
+      <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=1920&auto=format&fit=crop&q=80" style="width:100%;height:100%;object-fit:cover;opacity:0.5;" alt="">
+      <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(9,9,11,0.8) 0%, rgba(9,9,11,0.3) 100%);"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;padding:60px;">
+        <div style="max-width:480px;">
+          <h3 style="font-size:1.8rem;font-weight:800;line-height:1.2;margin-bottom:16px;">От идеи до готового<br><span class="gradient-text">светильника</span></h3>
+          <p style="color:#a1a1aa;line-height:1.7;font-size:1rem;">
+            Конструкторское бюро, производственный цех, отдел контроля качества 
+            и склад готовой продукции — всё под одной крышей площадью 1000 м².
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process steps -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+      <div style="background:#111113;border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="color:#f59e0b;font-size:2rem;font-weight:800;margin-bottom:12px;">01</div>
+        <h4 style="font-weight:700;margin-bottom:8px;font-size:0.9375rem;">Разработка</h4>
+        <p style="color:#71717a;font-size:0.8125rem;line-height:1.5;">Конструирование и оптическое проектирование</p>
+      </div>
+      <div style="background:#111113;border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="color:#f59e0b;font-size:2rem;font-weight:800;margin-bottom:12px;">02</div>
+        <h4 style="font-weight:700;margin-bottom:8px;font-size:0.9375rem;">Производство</h4>
+        <p style="color:#71717a;font-size:0.8125rem;line-height:1.5;">Сборка корпусов и монтаж электроники</p>
+      </div>
+      <div style="background:#111113;border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="color:#f59e0b;font-size:2rem;font-weight:800;margin-bottom:12px;">03</div>
+        <h4 style="font-weight:700;margin-bottom:8px;font-size:0.9375rem;">Испытания</h4>
+        <p style="color:#71717a;font-size:0.8125rem;line-height:1.5;">Фотометрические и климатические тесты</p>
+      </div>
+      <div style="background:#111113;border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="color:#f59e0b;font-size:2rem;font-weight:800;margin-bottom:12px;">04</div>
+        <h4 style="font-weight:700;margin-bottom:8px;font-size:0.9375rem;">Отгрузка</h4>
+        <p style="color:#71717a;font-size:0.8125rem;line-height:1.5;">Упаковка и доставка по всей России</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Реквизиты -->
+  <section style="background: #0d0d0f; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <div class="section-label mb-4">Юридические данные</div>
+      <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 32px;">Реквизиты</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div style="background:#111113;border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.06);">
+          <div style="color:#52525b;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Полное наименование</div>
+          <div style="font-weight:600;color:#e4e4e7;">ООО «РСК ГРУПП»</div>
+        </div>
+        <div style="background:#111113;border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.06);">
+          <div style="color:#52525b;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">ИНН / КПП</div>
+          <div style="font-weight:600;color:#e4e4e7;">1657223686 / 168301001</div>
+        </div>
+        <div style="background:#111113;border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.06);">
+          <div style="color:#52525b;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">ОГРН</div>
+          <div style="font-weight:600;color:#e4e4e7;">1161690093608</div>
+        </div>
+        <div style="background:#111113;border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.06);">
+          <div style="color:#52525b;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Юридический адрес</div>
+          <div style="font-weight:600;color:#e4e4e7;">420036, Республика Татарстан,<br>г. Казань, Теплично-Комбинатская ул., д. 5В</div>
+        </div>
+        <div style="background:#111113;border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.06);">
+          <div style="color:#52525b;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Телефон</div>
+          <div style="font-weight:600;color:#e4e4e7;"><a href="tel:+79600796853" class="hover:text-amber-400 transition-colors">+7 960 079-68-53</a></div>
+        </div>
+        <div style="background:#111113;border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.06);">
+          <div style="color:#52525b;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">E-mail</div>
+          <div style="font-weight:600;color:#e4e4e7;"><a href="mailto:mail@rsc-groupp.ru" class="hover:text-amber-400 transition-colors">mail@rsc-groupp.ru</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: #09090b; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-black" style="background: linear-gradient(135deg, #f59e0b, #d97706);">РСК</div>
+            <span class="font-bold text-white text-lg">РСК ГРУПП</span>
+          </div>
+          <p style="color:#52525b;font-size:0.875rem;line-height:1.6;margin-bottom:18px;">Производитель LED-оборудования. Казань, с 2016 года.</p>
+          <div class="flex gap-3">
+            <a href="#" style="width:34px;height:34px;border-radius:8px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-size:0.75rem;font-weight:700;" class="hover:bg-amber-500 hover:text-black transition-all">ВК</a>
+            <a href="#" style="width:34px;height:34px;border-radius:8px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-size:0.75rem;font-weight:700;" class="hover:bg-amber-500 hover:text-black transition-all">TG</a>
+            <a href="#" style="width:34px;height:34px;border-radius:8px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-size:0.75rem;font-weight:700;" class="hover:bg-amber-500 hover:text-black transition-all">YT</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Продукция</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="каталог.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Наружное освещение</a></li>
+            <li><a href="каталог.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Внутреннее освещение</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Компания</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li><a href="о_компании.html" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">О нас</a></li>
+            <li><a href="заказчику.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Заказчику</a></li>
+            <li><a href="наши_объекты.html" style="color:#52525b;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">Наши объекты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:white;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Контакты</h4>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li style="color:#52525b;font-size:0.875rem;">Казань, Теплично-Комбинатская, 5В</li>
+            <li><a href="tel:+79600796853" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">+7 960 079-68-53</a></li>
+            <li><a href="mailto:mail@rsc-groupp.ru" style="color:#a1a1aa;font-size:0.875rem;" class="hover:text-amber-400 transition-colors">mail@rsc-groupp.ru</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.05);">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
+        <p style="color:#3f3f46;font-size:0.75rem;">© 2026 ООО «РСК ГРУПП» · ИНН 1657223686</p>
+        <a href="#" style="color:#3f3f46;font-size:0.75rem;" class="hover:text-zinc-400 transition-colors">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
