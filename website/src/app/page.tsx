@@ -114,10 +114,13 @@ export default function HomePage() {
             <div className="section-label mb-5">
               Российский производитель · Казань · с 2016 года
             </div>
-            <h1 className="text-[clamp(2.5rem,5vw,4.2rem)] font-extrabold leading-[1.08] mb-6 text-zinc-900">
+            <h1 className="text-[clamp(2.5rem,5vw,4.2rem)] font-extrabold leading-[1.08] mb-4 text-zinc-900">
               Производство паркового освещения{" "}
               <span className="text-amber-600">полного цикла</span>
             </h1>
+            <p className="text-xl sm:text-2xl font-semibold text-amber-600/80 italic mb-6">
+              Несём свет людям
+            </p>
             <p className="text-base sm:text-lg text-zinc-600 leading-relaxed max-w-[480px] mb-10">
               Проектируем, производим и поставляем парковое и уличное освещение
               для городской инфраструктуры, промышленности и архитектуры.
