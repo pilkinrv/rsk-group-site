@@ -450,12 +450,13 @@ export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const article = articles.find((a) => a.slug === params.slug);
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const article = articles.find((a) => a.slug === slug);
   if (!article) return {};
   return {
     title: `${article.title} — РСК ГРУПП`,
@@ -463,15 +464,16 @@ export function generateMetadata({
   };
 }
 
-export default function ArticlePage({
+export default async function ArticlePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const article = articles.find((a) => a.slug === params.slug);
+  const { slug } = await params;
+  const article = articles.find((a) => a.slug === slug);
   if (!article) notFound();
 
-  const body = content[params.slug];
+  const body = content[slug];
   if (!body) notFound();
 
   return (

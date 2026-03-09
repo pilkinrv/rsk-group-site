@@ -314,12 +314,13 @@ export function generateStaticParams() {
   return news.map((n) => ({ slug: n.slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const item = news.find((n) => n.slug === params.slug);
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const item = news.find((n) => n.slug === slug);
   if (!item) return {};
   return {
     title: `${item.title} — РСК ГРУПП`,
@@ -327,15 +328,16 @@ export function generateMetadata({
   };
 }
 
-export default function NewsArticlePage({
+export default async function NewsArticlePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const item = news.find((n) => n.slug === params.slug);
+  const { slug } = await params;
+  const item = news.find((n) => n.slug === slug);
   if (!item) notFound();
 
-  const body = content[params.slug];
+  const body = content[slug];
   if (!body) notFound();
 
   return (
