@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BookOpen, Calendar, ArrowRight } from "lucide-react";
 import { articles } from "./data";
 
@@ -27,27 +28,38 @@ export default function PoleznoePage() {
           <Link
             key={article.slug}
             href={`/o-kompanii/poleznoe/${article.slug}`}
-            className="light-card p-6 flex flex-col group hover:shadow-md transition-shadow"
+            className="light-card overflow-hidden flex flex-col group hover:shadow-md transition-shadow"
           >
-            <div className="flex items-center gap-3 mb-3">
-              <BookOpen className="w-4 h-4 text-amber-600 shrink-0" />
-              <div className="flex items-center gap-1.5">
-                <Calendar size={13} className="text-zinc-400" />
-                <time className="text-xs text-zinc-400 tabular-nums">
-                  {article.date}
-                </time>
-              </div>
+            <div className="relative w-full h-48">
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
             </div>
-            <h2 className="font-semibold text-[0.95rem] mb-2 text-zinc-900 leading-snug group-hover:text-amber-700 transition-colors">
-              {article.title}
-            </h2>
-            <p className="text-zinc-500 text-sm leading-relaxed flex-1">
-              {article.desc}
-            </p>
-            <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-amber-600 group-hover:gap-2 transition-all">
-              Читать статью
-              <ArrowRight size={14} />
-            </span>
+            <div className="p-6 flex flex-col flex-1">
+              <div className="flex items-center gap-3 mb-3">
+                <BookOpen className="w-4 h-4 text-amber-600 shrink-0" />
+                <div className="flex items-center gap-1.5">
+                  <Calendar size={13} className="text-zinc-400" />
+                  <time className="text-xs text-zinc-400 tabular-nums">
+                    {article.date}
+                  </time>
+                </div>
+              </div>
+              <h2 className="font-semibold text-[0.95rem] mb-2 text-zinc-900 leading-snug group-hover:text-amber-700 transition-colors">
+                {article.title}
+              </h2>
+              <p className="text-zinc-500 text-sm leading-relaxed flex-1">
+                {article.desc}
+              </p>
+              <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-amber-600 group-hover:gap-2 transition-all">
+                Читать статью
+                <ArrowRight size={14} />
+              </span>
+            </div>
           </Link>
         ))}
       </section>

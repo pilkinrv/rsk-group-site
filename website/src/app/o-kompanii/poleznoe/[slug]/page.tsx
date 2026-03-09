@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar } from "lucide-react";
 import { articles } from "../data";
@@ -497,6 +498,17 @@ export default async function ArticlePage({
         <h1 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 leading-tight">
           {article.title}
         </h1>
+      </div>
+
+      <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden mb-8">
+        <Image
+          src={article.image}
+          alt={article.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 800px"
+          priority
+        />
       </div>
 
       <article className="prose prose-zinc max-w-none prose-headings:font-bold prose-headings:text-zinc-900 prose-p:text-zinc-600 prose-p:leading-relaxed prose-li:text-zinc-600 prose-strong:text-zinc-800 prose-ul:my-4 prose-li:my-1">
