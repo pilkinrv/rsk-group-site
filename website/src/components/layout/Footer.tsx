@@ -7,10 +7,14 @@ const productLinks = [
 ];
 
 const companyLinks = [
-  { href: "/o-kompanii", label: "О нас" },
-  { href: "/zakazchiku", label: "Заказчику" },
-  { href: "/portfolio", label: "Наши объекты" },
-  { href: "/garantii-ot-proizvoditelya", label: "Гарантии" },
+  { href: "/o-kompanii/o-nas", label: "О нас" },
+  { href: "/o-kompanii/istoriya", label: "История" },
+  { href: "/o-kompanii/proizvodstvo", label: "Производство" },
+  { href: "/o-kompanii/tsennosti", label: "Ценности" },
+  { href: "/o-kompanii/otdel-servisa", label: "Отдел сервиса" },
+  { href: "/o-kompanii/novosti", label: "Новости" },
+  { href: "/o-kompanii/poleznoe", label: "Полезное" },
+  { href: "/o-kompanii/ekskursiya", label: "Экскурсия" },
 ];
 
 const socialLinks = [

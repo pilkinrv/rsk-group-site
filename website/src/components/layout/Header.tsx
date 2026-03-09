@@ -2,14 +2,25 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { CallbackModal } from "@/components/CallbackModal";
+
+const oKompaniiSubItems = [
+  { href: "/o-kompanii/o-nas", label: "О нас" },
+  { href: "/o-kompanii/istoriya", label: "История" },
+  { href: "/o-kompanii/tsennosti", label: "Ценности" },
+  { href: "/o-kompanii/novosti", label: "Новости" },
+  { href: "/o-kompanii/proizvodstvo", label: "Производство" },
+  { href: "/o-kompanii/ekskursiya", label: "Экскурсия на производство" },
+  { href: "/o-kompanii/otdel-servisa", label: "Отдел сервиса" },
+  { href: "/o-kompanii/poleznoe", label: "Полезное" },
+];
 
 const navItems = [
   { href: "/", label: "Главная" },
   { href: "/proektirovshchikam/katalog", label: "Продукция" },
   { href: "/zakazchiku", label: "Заказчику" },
-  { href: "/o-kompanii", label: "О компании" },
+  { href: "/o-kompanii", label: "О компании", children: oKompaniiSubItems },
   { href: "/portfolio", label: "Наши объекты" },
   { href: "/kontakty", label: "Контакты" },
 ];
@@ -20,7 +31,10 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [callbackOpen, setCallbackOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [desktopDropdown, setDesktopDropdown] = useState(false);
+  const [mobileOKompaniiOpen, setMobileOKompaniiOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,14 +47,22 @@ export function Header() {
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMobileMenuOpen(false);
+      if (e.key === "Escape") {
+        setMobileMenuOpen(false);
+        setDesktopDropdown(false);
+      }
     };
+    if (mobileMenuOpen || desktopDropdown) {
+      document.addEventListener("keydown", handleEscape);
+      return () => document.removeEventListener("keydown", handleEscape);
+    }
+  }, [mobileMenuOpen, desktopDropdown]);
+
+  useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
-      document.addEventListener("keydown", handleEscape);
       return () => {
         document.body.style.overflow = "";
-        document.removeEventListener("keydown", handleEscape);
       };
     }
   }, [mobileMenuOpen]);
@@ -49,13 +71,23 @@ export function Header() {
     const handleClickOutside = (e: MouseEvent) => {
       if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
         setMobileMenuOpen(false);
+        setDesktopDropdown(false);
       }
     };
-    if (mobileMenuOpen) {
+    if (mobileMenuOpen || desktopDropdown) {
       document.addEventListener("click", handleClickOutside);
       return () => document.removeEventListener("click", handleClickOutside);
     }
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, desktopDropdown]);
+
+  const handleDropdownEnter = () => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setDesktopDropdown(true);
+  };
+
+  const handleDropdownLeave = () => {
+    dropdownTimeout.current = setTimeout(() => setDesktopDropdown(false), 150);
+  };
 
   const headerStyles = scrolled
     ? {
@@ -95,19 +127,56 @@ export function Header() {
             </span>
           </Link>
 
+          {/* Desktop nav */}
           <nav
             className="hidden lg:flex items-center gap-8"
             aria-label="Основная навигация"
           >
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm font-medium"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.children ? (
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={handleDropdownEnter}
+                  onMouseLeave={handleDropdownLeave}
+                >
+                  <Link
+                    href={item.href}
+                    className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm font-medium inline-flex items-center gap-1"
+                  >
+                    {item.label}
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform ${desktopDropdown ? "rotate-180" : ""}`}
+                    />
+                  </Link>
+
+                  {desktopDropdown && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
+                      <div className="bg-white rounded-xl shadow-lg border border-black/6 p-2 min-w-[220px]">
+                        {item.children.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            className="block px-3.5 py-2 rounded-lg text-sm text-zinc-500 hover:text-amber-700 hover:bg-amber-50/60 transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm font-medium"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </nav>
 
           <div className="flex items-center gap-4">
@@ -136,25 +205,65 @@ export function Header() {
           </div>
         </div>
 
+        {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 px-4 sm:px-6 lg:px-8 border-t border-zinc-200/80 bg-white/95 backdrop-blur-xl">
             <nav
-              className="flex flex-col gap-4"
+              className="flex flex-col gap-1"
               aria-label="Мобильное меню"
             >
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-zinc-500 hover:text-zinc-900 transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) =>
+                item.children ? (
+                  <div key={item.href}>
+                    <button
+                      type="button"
+                      className="flex items-center justify-between w-full py-2.5 text-zinc-500 hover:text-zinc-900 transition-colors font-medium"
+                      onClick={() =>
+                        setMobileOKompaniiOpen(!mobileOKompaniiOpen)
+                      }
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform ${mobileOKompaniiOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    {mobileOKompaniiOpen && (
+                      <div className="pl-4 pb-2 flex flex-col gap-0.5">
+                        <Link
+                          href={item.href}
+                          className="py-2 text-sm text-zinc-400 hover:text-amber-700 transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Все разделы
+                        </Link>
+                        {item.children.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            className="py-2 text-sm text-zinc-500 hover:text-amber-700 transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="py-2.5 text-zinc-500 hover:text-zinc-900 transition-colors font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              )}
               <a
                 href="tel:+79600796853"
-                className="text-zinc-500 hover:text-zinc-900 transition-colors"
+                className="py-2.5 text-zinc-500 hover:text-zinc-900 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 +7 960 079-68-53
@@ -165,7 +274,7 @@ export function Header() {
                   setMobileMenuOpen(false);
                   setCallbackOpen(true);
                 }}
-                className="px-4 py-2 rounded-lg text-sm font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-all w-fit"
+                className="px-4 py-2 rounded-lg text-sm font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-all w-fit mt-2"
               >
                 Заказать звонок
               </button>

@@ -12,7 +12,7 @@ export default function PortfolioPage() {
       <div className="relative z-10">
         <h1 className="text-4xl font-bold mb-4 text-zinc-900 inline-block">Наши объекты</h1>
         <p className="text-zinc-600 mb-10 max-w-2xl">
-          Реализованные проекты по всей России — более 60 объектов: парки, жилые
+          Реализованные проекты по всей России — более 1 000 объектов: парки, жилые
           комплексы, набережные и общественные пространства.
         </p>
         <PortfolioClient />

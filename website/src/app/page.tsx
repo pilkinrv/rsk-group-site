@@ -37,7 +37,7 @@ const focusCards = [
   {
     label: "Производство",
     title: "Собственный завод в Казани",
-    desc: "1 000 м² площади, полный цикл",
+    desc: "4 000 м² площади, полный цикл",
     cta: "Подробнее",
     href: "/o-kompanii",
     alt: "Собственное производство РСК ГРУПП в Казани",
@@ -121,7 +121,7 @@ export default function HomePage() {
             <p className="text-base sm:text-lg text-zinc-600 leading-relaxed max-w-[480px] mb-10">
               Проектируем, производим и поставляем парковое и уличное освещение
               для городской инфраструктуры, промышленности и архитектуры.
-              Собственный завод 1 000 м² в Казани.
+              Собственный завод 4 000 м² в Казани.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -176,7 +176,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="text-center">
-              <div className="stat-num">1 000</div>
+              <div className="stat-num">4 000</div>
               <div className="text-amber-700 text-[0.7rem] font-semibold tracking-[0.12em] uppercase mt-1.5">
                 м² производства
               </div>
@@ -317,7 +317,7 @@ export default function HomePage() {
               <span className="text-amber-600">полного цикла</span>
             </h2>
             <p className="text-zinc-500 text-base leading-relaxed mb-6">
-              На производственной площади 1 000 м² в Казани мы контролируем каждый
+              На производственной площади 4 000 м² в Казани мы контролируем каждый
               этап: разработку, подбор компонентов, сборку и испытания.
             </p>
             <ul className="space-y-3.5">
@@ -352,7 +352,7 @@ export default function HomePage() {
               href="/portfolio"
               className="text-zinc-400 text-sm hover:text-amber-700 transition-colors hidden md:inline-block"
             >
-              Все 12 объектов →
+              1 000+ объектов →
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
