@@ -6,7 +6,7 @@ const HERO_IMG =
   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&auto=format&fit=crop&q=80";
 const FOCUS_IMGS = [
   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=70",
-  "https://images.unsplash.com/photo-1517467139701-4429b5c06c19?w=600&auto=format&fit=crop&q=70",
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&auto=format&fit=crop&q=70",
   "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&auto=format&fit=crop&q=70",
 ];
 const PRODUCTION_IMG =
