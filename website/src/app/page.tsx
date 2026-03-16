@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Shield, Clock, Home, Activity, Lightbulb } from "lucide-react";
+import { Shield, Clock, Home, Activity } from "lucide-react";
 
 const HERO_IMG =
   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&auto=format&fit=crop&q=80";
@@ -139,20 +139,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        {/* Slogan — top right */}
-        <div className="absolute top-[96px] right-6 lg:right-10 flex flex-col items-end gap-1.5 select-none">
-          <div className="flex items-center gap-2.5 bg-white/70 backdrop-blur-md border border-amber-300/60 rounded-2xl px-4 py-2.5 shadow-[0_4px_24px_rgba(217,119,6,0.12)]">
-            <Lightbulb className="w-4 h-4 text-amber-500 shrink-0" />
-            <span
-              className="text-[0.8rem] font-semibold tracking-[0.08em] uppercase text-amber-700"
-              style={{ letterSpacing: "0.1em" }}
-            >
-              Несём свет людям
-            </span>
-          </div>
-          <div className="w-px h-6 bg-linear-to-b from-amber-400/60 to-transparent self-end mr-6" />
-        </div>
-
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-35">
           <span className="text-[0.65rem] tracking-[0.15em] uppercase text-zinc-500">
