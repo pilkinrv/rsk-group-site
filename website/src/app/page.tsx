@@ -110,6 +110,17 @@ export default function HomePage() {
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full py-24">
+          <p
+            className="absolute top-8 right-6 lg:right-8 italic text-lg sm:text-xl md:text-2xl font-light tracking-wide select-none pointer-events-none"
+            style={{
+              background: "linear-gradient(135deg, #b45309 0%, #d97706 40%, #fbbf24 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              textShadow: "0 2px 12px rgba(180,83,9,0.10)",
+            }}
+          >
+            Несём свет людям.
+          </p>
           <div className="max-w-[640px]">
             <div className="section-label mb-5">
               Российский производитель · Казань · с 2016 года
