@@ -113,10 +113,9 @@ export default function HomePage() {
           <p
             className="absolute top-8 right-6 lg:right-8 italic text-lg sm:text-xl md:text-2xl font-light tracking-wide select-none pointer-events-none"
             style={{
-              background: "linear-gradient(135deg, #b45309 0%, #d97706 40%, #fbbf24 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              textShadow: "0 2px 12px rgba(180,83,9,0.10)",
+              color: "#92400e",
+              textShadow: "0 1px 0 rgba(255,255,255,0.8), 0 2px 16px rgba(146,64,14,0.18)",
+              fontWeight: 600,
             }}
           >
             Несём свет людям.
